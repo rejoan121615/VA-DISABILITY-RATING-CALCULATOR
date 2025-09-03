@@ -7,6 +7,11 @@
     <title>VetValor Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Main JS -->
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -40,7 +45,8 @@
                                 <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png"
                                     alt="Checked">
                             </div>
-                            <div class="select-disabilities__list-item select-disabilities__list-item--active">
+                            <!-- <div class="select-disabilities__list-item select-disabilities__list-item--active"> -->
+                            <div class="select-disabilities__list-item">
                                 <span>Right Arm</span>
                                 <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png"
                                     alt="Chevron Icon" />
@@ -68,7 +74,7 @@
                                 <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png"
                                     alt="Checked">
                             </div>
-                            <div class="select-disabilities__list-item select-disabilities__list-item--active">
+                            <div class="select-disabilities__list-item ">
                                 <span>Right Leg</span>
                                 <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png"
                                     alt="Chevron Icon" />
@@ -96,10 +102,10 @@
                                 <button class="select-disabilities__percentage-button">20%</button>
                                 <button class="select-disabilities__percentage-button">30%</button>
                                 <button
-                                    class="select-disabilities__percentage-button select-disabilities__percentage-button--active">40%</button>
+                                    class="select-disabilities__percentage-button">40%</button>
                                 <button class="select-disabilities__percentage-button">50%</button>
                                 <button
-                                    class="select-disabilities__percentage-button select-disabilities__percentage-button--active">60%</button>
+                                    class="select-disabilities__percentage-button">60%</button>
                                 <button class="select-disabilities__percentage-button">70%</button>
                                 <button class="select-disabilities__percentage-button">80%</button>
                                 <button class="select-disabilities__percentage-button">90%</button>
@@ -112,7 +118,7 @@
                     <h2 class="calculator-section__title">Your Selections</h2>
                     <div class="selections-list">
 
-                        <div class="selections-list__item">
+                        <!-- <div class="selections-list__item">
                             <div class="selections-list__item-result">
                                 60% - Right Leg
                             </div>
@@ -124,7 +130,7 @@
                                 60% - Right Leg
                             </div>
                             <button class="selections-list__item-remove"></button>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -175,12 +181,12 @@
                         <div>
                             <label for="smc-k-amount-yes" class="additional-section__label">
                                 <input class="additional-section__input additional-section__input--radio" type="radio"
-                                    id="smc-k-amount-yes" name="smc-k-amount" checked />
+                                    id="smc-k-amount-yes" name="smc-k-amount" />
                                 Yes
                             </label>
                             <label for="smc-k-amount-no" class="additional-section__label">
                                 <input class="additional-section__input additional-section__input--radio" type="radio"
-                                    id="smc-k-amount-no" name="smc-k-amount" />
+                                    id="smc-k-amount-no" name="smc-k-amount" checked />
                                 No
                             </label>
                         </div>
@@ -248,24 +254,21 @@
                     <div class="additional-section__inputs">
                         <label for="d-parent-yes" class="additional-section__label">
                             <input class="additional-section__input additional-section__input--radio" type="radio"
-                                id="d-parent-yes" name="smc-k" checked />
+                                id="d-parent-yes" name="d-parent" />
                             Yes
                         </label>
                         <label for="d-parent-no" class="additional-section__label">
                             <input class="additional-section__input additional-section__input--radio" type="radio"
-                                id="d-parent-no" name="smc-k" />
+                                id="d-parent-no" name="d-parent" checked />
                             No
                         </label>
                     </div>
                     <div class="additional-section__inputs">
-                        <p class="additional-section__text input-label-text">How many depend parents?</p>
-                        <select class="additional-section__select" name="children-over-18" id="children-over-18">
+                        <p class="additional-section__text input-label-text">How many dependent parents?</p>
+                        <select class="additional-section__select" name="parent-count" id="parent-count">
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
                         </select>
                     </div>
                 </div>
