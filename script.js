@@ -147,9 +147,14 @@ $(document).ready(function () {
     // Remove active class from percentage buttons
     // $('.select-disabilities__percentage-button').removeClass('select-disabilities__percentage-button--active');
 
-    if (selectedDisability === null) {
+    // Prevent selecting if already selected
+    const bodyPartKey = getBodyPartKey($(this).find("span").text());
+    if (
+      selectedDisability === null &&
+      Array.isArray(part_disability_rate[bodyPartKey]) &&
+      part_disability_rate[bodyPartKey].length === 0
+    ) {
       $(this).addClass("select-disabilities__list-item--active");
-
       // Store the selected disability
       selectedDisability = $(this).find("span").text();
     }
