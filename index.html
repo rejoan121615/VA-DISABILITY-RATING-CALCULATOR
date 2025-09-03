@@ -3,160 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VA Disability Rating Calculator</title>
-    <!-- Tailwind CSS removed. Using BEM-based raw CSS instead. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
-    <script defer src="./script.js"></script>
+    <title>VetValor Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="va-body">
+<body>
+    <div class="page-background">
+        <div class="calculator-container">
+            <h1 class="calculator-title">VA DISABILITY RATING CALCULATOR</h1>
 
-    <div class="va-container">
-        <!-- Title Section -->
-    <h1 class="va-title">VA DISABILITY RATING CALCULATOR</h1>
-
-    <div class="va-main-grid">
-            <!-- Select Disabilities and Percentages Card -->
-            <div class="va-card va-card--disabilities">
-                <h2 class="va-card__title">Select Disabilities and Percentages</h2>
-                <div class="va-card__content va-card__content--disabilities">
-                    <div class="va-disability-list-wrapper">
-                        <div id="disability-list" class="va-disability-list">
-                            <!-- Disability list will be populated by JS -->
+            <div class="calculator-sections">
+                <div class="calculator-section calculator-section--select-disabilities">
+                    <h2 class="calculator-section__title">Select Disabilities and Percentages</h2>
+                    <div class="select-disabilities">
+                        <div class="select-disabilities__list">
+                            <div class="select-disabilities__list-item">
+                                <span>Mental</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item">
+                                <span>Head</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item">
+                                <span>Cervical / Neck</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item select-disabilities__list-item--active">
+                                <span>Right Arm</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item">
+                                <span>Left Arm</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item">
+                                <span>Spine / Back</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item">
+                                <span>GERD/IBS</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item select-disabilities__list-item--active">
+                                <span>Right Leg</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item">
+                                <span>Left Leg</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                            <div class="select-disabilities__list-item">
+                                <span>Other</span>
+                                <img class="select-disabilities__list-item-arrow" src="assets/icons/chevron.png" alt="Chevron Icon" />
+                                <img class="select-disabilities__list-item-tick" src="assets/icons/checked.png" alt="Checked">
+                            </div>
+                        </div>
+                        <div class="select-disabilities__percentages">
+                            <div class="select-disabilities__percentage-buttons">
+                                <button class="select-disabilities__percentage-button">10%</button>
+                                <button class="select-disabilities__percentage-button">20%</button>
+                                <button class="select-disabilities__percentage-button">30%</button>
+                                <button class="select-disabilities__percentage-button select-disabilities__percentage-button--active">40%</button>
+                                <button class="select-disabilities__percentage-button">50%</button>
+                                <button class="select-disabilities__percentage-button select-disabilities__percentage-button--active">60%</button>
+                                <button class="select-disabilities__percentage-button">70%</button>
+                                <button class="select-disabilities__percentage-button">80%</button>
+                                <button class="select-disabilities__percentage-button">90%</button>
+                                <button class="select-disabilities__percentage-button">100%</button>
+                            </div>
                         </div>
                     </div>
-                    <!-- Percentages grid -->
-                    <div id="percentage-grid" class="va-percentage-grid">
-                        <!-- Percentage buttons will be populated by JS -->
+                </div>
+                <div class="calculator-section calculator-section--selections">
+                    <h2 class="calculator-section__title">Your Selections</h2>
+                    <div class="selections-list">
+                        <div class="selections-list__item">
+                            <div class="selections-list__item-details">
+                                <div class="selections-list__item-name">Right Leg</div>
+                                <div class="selections-list__item-percent">60%</div>
+                            </div>
+                            <button class="selections-list__item-remove">Remove</button>
+                        </div>
+                        <div class="selections-list__item">
+                            <div class="selections-list__item-details">
+                                <div class="selections-list__item-name">Right Arm</div>
+                                <div class="selections-list__item-percent">40%</div>
+                            </div>
+                            <button class="selections-list__item-remove">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-section calculator-section--combined-rating">
+                    <h2 class="calculator-section__title">Combined Disability Percentage</h2>
+                    <div class="combined-rating__content">
+                        <div class="combined-rating__number">70</div>
+                        <div class="combined-rating__label">Your Combined Rating</div>
+                        <div class="combined-rating__info">
+                            This is your Combined Disability Rating, which is what the VA will rate you for all of your service-connected disabilities combined.
+                        </div>
+                        <button class="combined-rating__button">View Detailed Information</button>
                     </div>
                 </div>
             </div>
-
-            <!-- Your Selections & Combined Disability Card -->
-            <div class="va-main-grid__right">
-                <!-- Your Selections Card -->
-                <div class="va-card va-card--selections">
-                    <h2 class="va-card__title">Your Selections</h2>
-                    <div id="selections-list" class="va-selections-list">
-                        <!-- Selections will be populated by JS -->
+            <div class="additional-sections">
+                <div class="additional-section">
+                    <h2 class="additional-section__title">SMC-K</h2>
+                    <p class="additional-section__text">This is the 'Special Monthly Compensation' for single anatomical losses.</p>
+                    <button class="smc-k__button">Add SMC-K</button>
+                </div>
+                <div class="additional-section">
+                    <h2 class="additional-section__title">Dependents</h2>
+                    <p class="additional-section__text">Have dependents you want to include in your monthly benefit calculation? Select your spouse and child count below.</p>
+                    <div class="dependents-section__controls">
+                        <div class="dependents-section__group">
+                            <span class="dependents-section__label">Spouse</span>
+                            <div class="dependents-section__count">
+                                <button class="dependents-section__button">-</button>
+                                <span class="dependents-section__number">0</span>
+                                <button class="dependents-section__button">+</button>
+                            </div>
+                        </div>
+                        <div class="dependents-section__group">
+                            <span class="dependents-section__label">Child</span>
+                            <div class="dependents-section__count">
+                                <button class="dependents-section__button">-</button>
+                                <span class="dependents-section__number">2</span>
+                                <button class="dependents-section__button">+</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Combined Disability Percentage Card -->
-                <div class="va-card va-card--combined">
-                    <h2 class="va-card__title">Combined Disability Percentage</h2>
-                    <div class="va-combined__section va-combined__section--bilaterals">
-                        <p class="va-combined__label">Combined Bilaterals</p>
-                        <p id="bilaterals-value" class="va-combined__value">0.0</p>
-                    </div>
-                    <div class="va-combined__section va-combined__section--rating">
-                        <p class="va-combined__label">Estimated Disability Rating</p>
-                        <p id="rating-value" class="va-combined__rating">0%</p>
-                    </div>
-                    <div id="rounded-message" class="va-combined__rounded-message hidden">
-                        <i class="fas fa-info-circle va-combined__icon"></i>
-                        <p><span id="unrounded-rating">0</span>% will be rounded to <span id="rounded-rating">0</span>%.</p>
-                    </div>
-                    <div class="va-combined__section va-combined__section--payment">
-                        <p class="va-combined__label">Your monthly payment</p>
-                        <p id="monthly-payment" class="va-combined__payment">$0.00</p>
-                    </div>
-                    <button class="va-btn va-btn--consultation">
-                        Schedule a Free Consultation
-                    </button>
+                <div class="additional-section">
+                    <h2 class="additional-section__title">Special Monthly Compensation</h2>
+                    <p class="additional-section__text">SMC is for Veterans who need aid and attendance from another person or who are housebound. Veterans can also receive SMC for loss of a limb or use of a limb.</p>
+                    <button class="smc-eligibility__button">Check SMC Eligibility</button>
                 </div>
-            </div>
-        </div>
-
-        <!-- Additional Information Section -->
-        <div class="va-info-grid">
-            <div class="va-card va-card--smc">
-                <h2 class="va-card__title">SMC-K</h2>
-                <p class="va-card__desc">Special monthly compensation</p>
-                <div class="va-radio-group" id="smc-k-options">
-                    <label class="va-radio-label">
-                        <input type="radio" name="smc-k" value="yes" class="form-radio" checked>
-                        <span>Yes</span>
-                    </label>
-                    <label class="va-radio-label">
-                        <input type="radio" name="smc-k" value="no" class="form-radio">
-                        <span>No</span>
-                    </label>
-                </div>
-            </div>
-            
-            <div class="va-card va-card--dependents">
-                <h2 class="va-card__title">Do You Have Any Dependents?</h2>
-                <div class="va-card__content va-card__content--dependents">
-                    <label for="children-under-18" class="va-label">How many children under 18?</label>
-                    <select id="children-under-18" class="va-select">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                    <label for="children-over-18" class="va-label">How many children over 18?</label>
-                    <select id="children-over-18" class="va-select">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="va-card va-card--marital">
-                <h2 class="va-card__title">What is your marital status?</h2>
-                <div class="va-radio-group va-radio-group--marital" id="marital-status-options">
-                    <label class="va-radio-label">
-                        <input type="radio" name="marital-status" value="married" class="form-radio" checked>
-                        <span>Married</span>
-                    </label>
-                    <label class="va-radio-label">
-                        <input type="radio" name="marital-status" value="single" class="form-radio">
-                        <span>Single</span>
-                    </label>
-                </div>
-                <p class="va-label">Add Dependent Spouse</p>
-                <p class="va-label va-label--mb">Do you spouse need aid and attendance?</p>
-                <div class="va-radio-group va-radio-group--spouse" id="spouse-aid-options">
-                    <label class="va-radio-label">
-                        <input type="radio" name="spouse-aid" value="yes" class="form-radio">
-                        <span>Yes</span>
-                    </label>
-                    <label class="va-radio-label">
-                        <input type="radio" name="spouse-aid" value="no" class="form-radio" checked>
-                        <span>No</span>
-                    </label>
-                </div>
-            </div>
-
-            <div class="va-card va-card--parents">
-                <h2 class="va-card__title">Add Dependent Parent(s)</h2>
-                <div class="va-radio-group va-radio-group--parents" id="dependent-parents-options">
-                    <label class="va-radio-label">
-                        <input type="radio" name="dependent-parents" value="yes" class="form-radio">
-                        <span>Yes</span>
-                    </label>
-                    <label class="va-radio-label">
-                        <input type="radio" name="dependent-parents" value="no" class="form-radio" checked>
-                        <span>No</span>
-                    </label>
-                </div>
-                <label for="dependent-parents-count" class="va-label">How many dependent parents?</label>
-                <select id="dependent-parents-count" class="va-select va-select--parents">
-                    <option>0</option>
-                    <option>1</option>
-                    <option>2</option>
-                </select>
             </div>
         </div>
     </div>
-
-  
 </body>
 </html>

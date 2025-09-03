@@ -1,33 +1,378 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vet-sec-gap: 10px;
+    --vet-list-gap: 5px;
+    --ver-border-radius: 10px;
+    --vet-color-primary: #0042c5;
+    --vet-color-secondary: #00a1ff;
+    --vet-color-action: #c41212;
+    --vet-color-border: #263d67;
+    --vet-color-list-item: #1d2e4d;
+}
+
+
+.page-background {
+    background-color: #0d1e37;
+    color: #ffffff;
     font-family: 'Inter', sans-serif;
-    background-color: #0b1a37;
-    color: #d1d5db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    padding-top: 120px;
 }
 
-.form-radio {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    display: inline-block;
-    vertical-align: middle;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50% 50%;
-    border-radius: 9999px;
-    border-width: 2px;
-    border-color: #4b5563;
-    height: 1.25rem;
-    width: 1.25rem;
+.calculator-title {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    color: #d8e5ff;
+    margin-bottom: 60px;
+}
+
+.calculator-container {
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.calculator-sections {
+    display: flex;
+    gap: var(--vet-sec-gap);
+    flex-wrap: wrap;
+}
+
+
+
+.calculator-section--select-disabilities {
+    flex: 2;
+}
+
+.calculator-section--selections {
+    flex: 1;
+}
+
+.calculator-section--combined-rating {
+    flex: 1;
+}
+
+.calculator-section__title {
+    font-size: 1rem;
+    font-weight: 600;
+    background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0));
+    color: #d8e5ff;
+    padding: 15px 0px 15px 20px;
+    border-radius: 5px;
+    margin-bottom: var(--vet-sec-gap);
+}
+
+.select-disabilities {
+    display: flex;
+    gap: var(--vet-list-gap);
+    flex-wrap: wrap;
+}
+
+.select-disabilities__list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--vet-list-gap);
+}
+
+.select-disabilities__list-item {
+    border: 1px solid var(--vet-color-border);
+    background-color: var(--vet-color-list-item);
+    color: #ffffff;
+    padding: 15px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 18px;
 }
 
-.form-radio:checked {
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
-    background-color: #3b82f6;
-    border-color: #3b82f6;
+.select-disabilities__list-item:hover {
+    background-color: #2a416a;
 }
 
-.form-radio:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+.select-disabilities__list-item--active {
+    background-image: linear-gradient(-90deg, #0048da, #002776);
+}
+
+.select-disabilities__list-item-arrow {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.select-disabilities__list-item-tick {
+    display: none;
+    width: 20px;
+    height: 20px;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+
+.select-disabilities__list-item--active .select-disabilities__list-item-arrow {
+    display: none;
+}
+
+.select-disabilities__list-item--active .select-disabilities__list-item-tick {
+    display: block;
+}
+
+.select-disabilities__percentages {
+    flex: 1.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--vet-color-border);
+    border-left: 5px solid;
+    border-image: linear-gradient(0deg, rgba(0, 39, 117, 1) 0%, rgba(0, 83, 252, 1) 50%, rgba(0, 39, 117, 1) 100%);
+    border-image-slice: 1;
+}
+
+.select-disabilities__percentage-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--vet-sec-gap);
+}
+
+.select-disabilities__percentage-button {
+    background: linear-gradient(90deg, rgba(29, 46, 76, 1) 0%, rgba(29, 46, 76, 0) 100%);
+    color: #c4d7ff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.select-disabilities__percentage-button:hover {
+    background-color: #2a416a;
+}
+
+.select-disabilities__percentage-button--active {
+    background: #002B80;
+    background: linear-gradient(90deg, rgba(0, 43, 128, 1) 0%, rgba(0, 63, 189, 1) 100%);
+}
+
+.selections-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.selections-list__item {
+    background-color: #1d3356;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selections-list__item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.selections-list__item-name {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.selections-list__item-percent {
+    font-size: 0.9rem;
+    color: #a8b0c2;
+}
+
+.selections-list__item-remove {
+    background-color: #ff5b5b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.2s ease;
+}
+
+.selections-list__item-remove:hover {
+    background-color: #e04a4a;
+}
+
+.combined-rating__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.combined-rating__number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #00d7ff;
+    /* Matching color from design */
+    margin-top: 20px;
+}
+
+.combined-rating__label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #d8e5ff;
+    margin-bottom: 20px;
+}
+
+.combined-rating__info {
+    font-size: 0.9rem;
+    color: #a8b0c2;
+    margin-bottom: 20px;
+}
+
+.combined-rating__button {
+    background-color: #033c94;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.combined-rating__button:hover {
+    background-color: #022a6b;
+}
+
+/* SMC-K and Dependents Section */
+.additional-sections {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.additional-section {
+    flex: 1;
+    min-width: 250px;
+    border-radius: 10px;
+    background-color: #122849;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.additional-section__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0));
+    color: #d8e5ff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.additional-section__text {
+    font-size: 0.9rem;
+    color: #a8b0c2;
+    margin-bottom: 20px;
+}
+
+.smc-k__button {
+    background-color: #1d3356;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.smc-k__button:hover {
+    background-color: #2a416a;
+}
+
+.dependents-section__controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.dependents-section__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.dependents-section__label {
+    font-weight: 600;
+}
+
+.dependents-section__count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dependents-section__button {
+    background-color: #033c94;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.dependents-section__button:hover {
+    background-color: #022a6b;
+}
+
+.dependents-section__number {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.smc-eligibility__button {
+    background-color: #033c94;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.smc-eligibility__button:hover {
+    background-color: #022a6b;
 }
