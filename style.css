@@ -109,7 +109,8 @@
     background-color: #2a416a;
 }
 
-.select-disabilities__list-item--active {
+.select-disabilities__list-item--active ,
+.select-disabilities__list-item--selected {
     background-image: linear-gradient(-90deg, #0048da, #002776);
 }
 
@@ -127,11 +128,13 @@
     stroke-width: 2;
 }
 
-.select-disabilities__list-item--active .select-disabilities__list-item-arrow {
+.select-disabilities__list-item--active .select-disabilities__list-item-arrow,
+.select-disabilities__list-item--selected .select-disabilities__list-item-arrow {
     display: none;
 }
 
-.select-disabilities__list-item--active .select-disabilities__list-item-tick {
+.select-disabilities__list-item--active .select-disabilities__list-item-tick,
+.select-disabilities__list-item--selected .select-disabilities__list-item-tick {
     display: block;
 }
 
