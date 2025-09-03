@@ -166,42 +166,108 @@
                     </div>
                 </div>
             </div>
+
             <div class="additional-sections">
                 <div class="additional-section">
                     <h2 class="additional-section__title">SMC-K</h2>
-                    <p class="additional-section__text">This is the 'Special Monthly Compensation' for single anatomical
-                        losses.</p>
-                    <button class="smc-k__button">Add SMC-K</button>
-                </div>
-                <div class="additional-section">
-                    <h2 class="additional-section__title">Dependents</h2>
-                    <p class="additional-section__text">Have dependents you want to include in your monthly benefit
-                        calculation? Select your spouse and child count below.</p>
-                    <div class="dependents-section__controls">
-                        <div class="dependents-section__group">
-                            <span class="dependents-section__label">Spouse</span>
-                            <div class="dependents-section__count">
-                                <button class="dependents-section__button">-</button>
-                                <span class="dependents-section__number">0</span>
-                                <button class="dependents-section__button">+</button>
-                            </div>
-                        </div>
-                        <div class="dependents-section__group">
-                            <span class="dependents-section__label">Child</span>
-                            <div class="dependents-section__count">
-                                <button class="dependents-section__button">-</button>
-                                <span class="dependents-section__number">2</span>
-                                <button class="dependents-section__button">+</button>
-                            </div>
+                    <div class="additional-section__smc additional-section__inputs">
+                        <p class="additional-section__text input-label-text">Special monthly compensation</p>
+                        <div>
+                            <label for="smc-k-amount-yes" class="additional-section__label">
+                                <input class="additional-section__input additional-section__input--radio" type="radio"
+                                    id="smc-k-amount-yes" name="smc-k" />
+                                Yes
+                            </label>
+                            <label for="smc-k-amount-no" class="additional-section__label">
+                                <input class="additional-section__input additional-section__input--radio" type="radio"
+                                    id="smc-k-amount-no" name="smc-k" />
+                                No
+                            </label>
                         </div>
                     </div>
                 </div>
                 <div class="additional-section">
-                    <h2 class="additional-section__title">Special Monthly Compensation</h2>
-                    <p class="additional-section__text">SMC is for Veterans who need aid and attendance from another
-                        person or who are housebound. Veterans can also receive SMC for loss of a limb or use of a limb.
-                    </p>
-                    <button class="smc-eligibility__button">Check SMC Eligibility</button>
+                    <h2 class="additional-section__title">Do you have any dependents?</h2>
+                    <div class="additional-section__dependents additional-section__inputs">
+                        <div class="additional-section__dependents--under">
+                            <p class="additional-section__text input-label-text">How many children under 18?</p>
+                            <select class="additional-section__select" name="children-under-18" id="children-under-18">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <div class="additional-section__dependents--over">
+                            <p class="additional-section__text input-label-text">How many children over 18?</p>
+                            <select class="additional-section__select" name="children-over-18" id="children-over-18">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="additional-section">
+                    <h2 class="additional-section__title">What is your marital status?</h2>
+                    <div class="additional-section__inputs">
+                        <label for="marital-status-married" class="additional-section__label">
+                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                                id="marital-status-married" name="marital-status" checked />
+                            Married
+                        </label>
+                        <label for="marital-status-single" class="additional-section__label">
+                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                                id="marital-status-single" name="marital-status" />
+                            Single
+                        </label>
+                    </div>
+                    <div class=" additional-section__inputs">
+                        <p class="input-label-text">Add Dependent Spouse</p>
+                        <p class="additional-section__text input-label-text--small">Does your spouse need aid and
+                            attendance?</p>
+                        <label for="spouse-aid-yes" class="additional-section__label">
+                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                                id="spouse-aid-yes" name="smc-k" checked />
+                            Yes
+                        </label>
+                        <label for="spouse-aid-no" class="additional-section__label">
+                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                                id="spouse-aid-no" name="smc-k" />
+                            No
+                        </label>
+                    </div>
+                </div>
+                <div class="additional-section">
+                    <h2 class="additional-section__title">Add Dependent Parent(s)</h2>
+                    <div class="additional-section__inputs">
+                        <label for="d-parent-yes" class="additional-section__label">
+                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                                id="d-parent-yes" name="smc-k" checked />
+                            Yes
+                        </label>
+                        <label for="d-parent-no" class="additional-section__label">
+                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                                id="d-parent-no" name="smc-k" />
+                            No
+                        </label>
+                    </div>
+                    <div class="additional-section__inputs">
+                        <p class="additional-section__text input-label-text">How many depend parents?</p>
+                        <select class="additional-section__select" name="children-over-18" id="children-over-18">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>

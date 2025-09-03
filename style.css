@@ -27,6 +27,7 @@
     margin: 0;
     box-sizing: border-box;
     padding-top: 120px;
+    padding-bottom: 120px;
 }
 
 .calculator-title {
@@ -64,7 +65,8 @@
     flex: 1;
 }
 
-.calculator-section__title {
+.calculator-section__title,
+.additional-section__title {
     font-size: 1rem;
     font-weight: 600;
     background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0));
@@ -311,7 +313,7 @@
 .additional-sections {
     display: flex;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 40px;
     flex-wrap: wrap;
 }
 
@@ -319,31 +321,66 @@
     flex: 1;
     min-width: 250px;
     border-radius: 10px;
-    background-color: #122849;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
+.additional-section__inputs {
+    padding: 15px 20px;
+
+}
+
 .additional-section__title {
     font-size: 1.2rem;
     font-weight: 600;
-    background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0));
     color: #d8e5ff;
-    padding: 8px 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    width: 100%;
 }
 
 .additional-section__text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.input-label-text--small {
     font-size: 0.9rem;
-    color: #a8b0c2;
     margin-bottom: 20px;
 }
 
-.smc-k__button {
+.additional-section__label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.additional-section__input--radio {
+    margin-right: 8px;
+}
+
+.additional-section__select {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    display: block;
+    width: 85px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid var(--vet-color-border);
+    color: white;
+    padding: 10px 20px;
+    background-color: #1d2e4d;
+}
+
+.additional-section__dependents--under {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* .smc-k__button {
     background-color: #1d3356;
     color: #ffffff;
     padding: 12px 20px;
@@ -354,11 +391,11 @@
     font-weight: 600;
     transition: background-color 0.2s ease;
     width: 100%;
-}
+} */
 
-.smc-k__button:hover {
+/* .smc-k__button:hover {
     background-color: #2a416a;
-}
+} */
 
 .dependents-section__controls {
     display: flex;
