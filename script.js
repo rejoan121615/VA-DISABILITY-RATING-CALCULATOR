@@ -196,8 +196,10 @@ $(document).ready(function () {
     const selectionsList = $(".selections-list");
     selectionsList.empty();
 
-    // Create selections from all disability rates
-    Object.keys(part_disability_rate).forEach((bodyPart) => {
+    // Only process actual disability body parts (exclude spouse, children, children18, parent)
+    const disabilityBodyParts = ['bd', 'la', 'ra', 'll', 'rl', 'head', 'cervical', 'spine', 'mental', 'addition'];
+    
+    disabilityBodyParts.forEach((bodyPart) => {
       if (
         Array.isArray(part_disability_rate[bodyPart]) &&
         part_disability_rate[bodyPart].length > 0
@@ -520,10 +522,14 @@ $(document).ready(function () {
     // Marital status
     $('input[name="marital-status"]').change(function () {
       if ($(this).attr("id") === "marital-status-married") {
+        // Enable spouse aid radio buttons
+        $('input[name="spouse-aid"]').prop("disabled", false);
         // Check spouse aid status
         const spouseAid = $('input[name="spouse-aid"]:checked').attr("id");
         part_disability_rate["spouse"] = spouseAid === "spouse-aid-yes" ? 1 : 2;
       } else {
+        // Disable spouse aid radio buttons and reset spouse value
+        $('input[name="spouse-aid"]').prop("disabled", true);
         part_disability_rate["spouse"] = 0;
       }
       display_rate_payment();
@@ -541,9 +547,13 @@ $(document).ready(function () {
     // Dependent parents
     $('input[name="d-parent"]').change(function () {
       if ($(this).attr("id") === "d-parent-yes") {
+        // Enable parent count select box
+        $("#parent-count").prop("disabled", false);
         const parentCount = parseInt($("#parent-count").val()) || 1;
         part_disability_rate["parent"] = parentCount;
       } else {
+        // Disable parent count select box and reset value
+        $("#parent-count").prop("disabled", true);
         part_disability_rate["parent"] = 0;
       }
       display_rate_payment();
@@ -565,5 +575,12 @@ $(document).ready(function () {
 
   // Initialize
   setupDependentHandlers();
+  
+  // Set initial state - disable spouse aid radio buttons since "Single" is checked by default
+  $('input[name="spouse-aid"]').prop("disabled", true);
+  
+  // Set initial state - disable parent count select box since "No" is checked by default
+  $("#parent-count").prop("disabled", true);
+  
   display_rate_payment();
 });
