@@ -16,6 +16,8 @@
   --vet-color-list-item: #1d2e4d;
 }
 
+
+
 .cal-container {
   background-color: #0d1e37;
   color: #ffffff;
@@ -365,5 +367,17 @@
         }
       }
     }
+
+    .maritial-status {
+        .spouse {
+            .large {
+                margin-bottom: 0;
+            }
+            .small {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
   }
 }

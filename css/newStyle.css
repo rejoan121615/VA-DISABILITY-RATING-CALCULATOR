@@ -304,5 +304,11 @@
 .cal-container .cal-sections .form .radio-label .custom-radio {
   margin-right: 8px;
 }
+.cal-container .cal-sections .maritial-status .spouse .large {
+  margin-bottom: 0;
+}
+.cal-container .cal-sections .maritial-status .spouse .small {
+  font-size: 0.8rem;
+}
 
 /*# sourceMappingURL=newStyle.css.map */
