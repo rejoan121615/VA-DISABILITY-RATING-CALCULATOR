@@ -172,27 +172,27 @@
                 </div>
                 <div class="cal-section smc">
                     <h2>SMC-K</h2>
-                    <div class="additional-section__smc additional-section__inputs">
-                        <p class="additional-section__text input-label-text">Special monthly compensation</p>
+                    <div class="form">
+                        <p>Special monthly compensation</p>
                         <div>
-                            <label for="smc-k-amount-yes" class="additional-section__label">
-                                <input class="additional-section__input additional-section__input--radio" type="radio"
+                            <label class="radio-label" for="smc-k-amount-yes">
+                                <input class="custom-radio" type="radio"
                                     id="smc-k-amount-yes" name="smc-k-amount" />
-                                Yes
+                                    <span>Yes</span>
                             </label>
-                            <label for="smc-k-amount-no" class="additional-section__label">
-                                <input class="additional-section__input additional-section__input--radio" type="radio"
+                            <label class="radio-label" for="smc-k-amount-no">
+                                <input class="custom-radio" type="radio"
                                     id="smc-k-amount-no" name="smc-k-amount" checked />
-                                No
+                                    <span>No</span>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="cal-section dependent">
                     <h2>Do you have any dependents?</h2>
-                    <div class="additional-section__dependents additional-section__inputs">
-                        <div class="additional-section__dependents--under">
-                            <p class="additional-section__text input-label-text">How many children under 18?</p>
+                    <div class="form">
+                        <div class="input-group">
+                            <p>How many children under 18?</p>
                             <select class="additional-section__select" name="children-under-18" id="children-under-18">
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -202,9 +202,9 @@
                                 <option value="5">5</option>
                             </select>
                         </div>
-                        <div class="additional-section__dependents--over">
-                            <p class="additional-section__text input-label-text">How many children over 18?</p>
-                            <select class="additional-section__select" name="children-over-18" id="children-over-18">
+                        <div class="input-group">
+                            <p>How many children over 18?</p>
+                            <select name="children-over-18" id="children-over-18">
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -217,29 +217,35 @@
                 </div>
                 <div class="cal-section maritial-status">
                     <h2>What is your marital status?</h2>
-                    <div class="additional-section__inputs">
-                        <label for="marital-status-married" class="additional-section__label">
-                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                    <div class="form">
+                        <label for="marital-status-married" class="radio-label">
+                            <input class="custom-radio" type="radio"
                                 id="marital-status-married" name="marital-status" />
-                            Married
+                            <span>
+                                Married
+                            </span>
                         </label>
-                        <label for="marital-status-single" class="additional-section__label">
-                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                        <label for="marital-status-single" class="radio-label">
+                            <input class="custom-radio" type="radio"
                                 id="marital-status-single" name="marital-status" checked />
-                            Single
+                            <span>
+                                Single
+                            </span>
                         </label>
                     </div>
-                    <div class=" additional-section__inputs">
+                    <div class="form">
                         <p class="input-label-text">Add Dependent Spouse</p>
                         <p class="additional-section__text input-label-text--small">Does your spouse need aid and
                             attendance?</p>
-                        <label for="spouse-aid-yes" class="additional-section__label">
-                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                        <label for="spouse-aid-yes" class="radio-label">
+                            <input class="custom-radio" type="radio"
                                 id="spouse-aid-yes" name="spouse-aid" checked />
-                            Yes
+                            <span>
+                                Yes
+                            </span>
                         </label>
-                        <label for="spouse-aid-no" class="additional-section__label">
-                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                        <label for="spouse-aid-no" class="radio-label">
+                            <input class="custom-radio" type="radio"
                                 id="spouse-aid-no" name="spouse-aid" />
                             No
                         </label>
@@ -247,14 +253,16 @@
                 </div>
                 <div class="cal-section parents">
                     <h2>Add Dependent Parent(s)</h2>
-                    <div class="additional-section__inputs">
-                        <label for="d-parent-yes" class="additional-section__label">
-                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                    <div class="form">
+                        <label for="d-parent-yes" class="radio-label">
+                            <input class="custom-radio" type="radio"
                                 id="d-parent-yes" name="d-parent" />
-                            Yes
+                            <span>
+                                Yes
+                            </span>
                         </label>
-                        <label for="d-parent-no" class="additional-section__label">
-                            <input class="additional-section__input additional-section__input--radio" type="radio"
+                        <label for="d-parent-no" class="radio-label">
+                            <input class="custom-radio" type="radio"
                                 id="d-parent-no" name="d-parent" checked />
                             No
                         </label>
