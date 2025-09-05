@@ -99,6 +99,7 @@ $xxl: 1400px;
       }
       &:last-child {
         font-size: 1.4rem;
+        color: #d8e5ff;
         @include resp($lg) {
           font-size: 2rem;
           font-weight: 500;
@@ -108,9 +109,6 @@ $xxl: 1400px;
 
       &:first-child,
       &:last-child {
-        font-size: 1.8rem;
-        font-weight: 800;
-        color: #1abbff;
         @include resp($lg) {
           font-size: 2rem;
           font-weight: 500;
@@ -403,9 +401,13 @@ $xxl: 1400px;
         }
 
         h1 {
-          font-size: 2rem;
+          font-size: 2.2rem;
           font-weight: 700;
-          color: #00d7ff;
+          color: #00a1ff;
+          color: var(--vet-color-secondary);
+          @include resp($lg) {
+            font-size: 45px;
+          }
         }
 
         .result-card,
@@ -415,6 +417,15 @@ $xxl: 1400px;
           align-items: center;
           justify-content: space-between;
           background-color: #051a3b;
+        }
+
+        .result-card {
+          h2 {
+            background: transparent;
+            padding: 0;
+            margin: 0;
+            font-size: 32px;
+          }
         }
 
         .notice {

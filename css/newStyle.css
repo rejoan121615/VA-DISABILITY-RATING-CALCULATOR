@@ -90,6 +90,7 @@
 }
 .cal-container .cal-title span:last-child {
   font-size: 1.4rem;
+  color: #d8e5ff;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-title span:last-child {
@@ -97,11 +98,6 @@
     font-weight: 500;
     color: #d8e5ff;
   }
-}
-.cal-container .cal-title span:first-child, .cal-container .cal-title span:last-child {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #1abbff;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-title span:first-child, .cal-container .cal-title span:last-child {
@@ -348,9 +344,15 @@
   text-align: left;
 }
 .cal-container .cal-sections .combined .combined-wrap h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #00d7ff;
+  color: #00a1ff;
+  color: var(--vet-color-secondary);
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-sections .combined .combined-wrap h1 {
+    font-size: 45px;
+  }
 }
 .cal-container .cal-sections .combined .combined-wrap .result-card,
 .cal-container .cal-sections .combined .combined-wrap .notice {
@@ -359,6 +361,12 @@
   align-items: center;
   justify-content: space-between;
   background-color: #051a3b;
+}
+.cal-container .cal-sections .combined .combined-wrap .result-card h2 {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-size: 32px;
 }
 .cal-container .cal-sections .combined .combined-wrap .notice {
   font-size: 0.8rem;
