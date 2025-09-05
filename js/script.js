@@ -134,18 +134,18 @@ $(document).ready(function () {
   }
 
   // Handle disability item clicks
-  $(".select-disabilities__list-item").click(function () {
+  $(".disab-item").click(function () {
     // Remove active class from all items
-    // $('.select-disabilities__list-item').removeClass('select-disabilities__list-item--active');
+    // $('.disab-item').removeClass('active');
 
     // Add active class to clicked item
-    // $(this).addClass("select-disabilities__list-item--active");
+    // $(this).addClass("active");
 
     // Store the selected disability
     // selectedDisability = $(this).find("span").text();
 
     // Remove active class from percentage buttons
-    // $('.select-disabilities__percentage-button').removeClass('select-disabilities__percentage-button--active');
+    // $('.percent-btn').removeClass('active');
 
     // Prevent selecting if already selected
     const bodyPartKey = getBodyPartKey($(this).find("span").text());
@@ -154,20 +154,20 @@ $(document).ready(function () {
       Array.isArray(part_disability_rate[bodyPartKey]) &&
       part_disability_rate[bodyPartKey].length === 0
     ) {
-      $(this).addClass("select-disabilities__list-item--active");
+      $(this).addClass("active");
       // Store the selected disability
       selectedDisability = $(this).find("span").text();
     }
   });
 
   // Handle percentage button clicks
-  $(".select-disabilities__percentage-button").click(function () {
+  $(".percent-btn").click(function () {
     if (selectedDisability) {
       const percentage = parseInt($(this).text().replace("%", ""));
 
       // Mark the percentage button as active
-      // $('.select-disabilities__percentage-button').removeClass('select-disabilities__percentage-button--active');
-      // $(this).addClass('select-disabilities__percentage-button--active');
+      // $('.percent-btn').removeClass('active');
+      // $(this).addClass('active');
 
       // Add to disability rates
       const bodyPartKey = getBodyPartKey(selectedDisability);
@@ -184,16 +184,14 @@ $(document).ready(function () {
 
       // Reset selected disability
       selectedDisability = null;
-      // $('.select-disabilities__list-item').removeClass('select-disabilities__list-item--active');
-      $(".select-disabilities__percentage-button").removeClass(
-        "select-disabilities__percentage-button--active"
-      );
+      // $('.disab-item').removeClass('active');
+      $(".percent-btn").removeClass("active");
     }
   });
 
   // Function to update the selections display
   function updateSelectionsDisplay() {
-    const selectionsList = $(".selections-list");
+    const selectionsList = $(".select-list");
     selectionsList.empty();
 
     // Only process actual disability body parts (exclude spouse, children, children18, parent)
@@ -207,11 +205,11 @@ $(document).ready(function () {
         part_disability_rate[bodyPart].forEach((percentage, index) => {
           const disabilityName = getDisabilityName(bodyPart);
           const selectionItem = $(`
-                        <div class="selections-list__item" data-bodypart="${bodyPart}" data-index="${index}">
-                            <div class="selections-list__item-result">
+                        <div class="select-item" data-bodypart="${bodyPart}" data-index="${index}">
+                            <div class="select-result">
                                 ${disabilityName} - ${percentage}%
                             </div>
-                            <button class="selections-list__item-remove" data-bodypart="${bodyPart}" data-index="${index}"></button>
+                            <button class="remove-btn" data-bodypart="${bodyPart}" data-index="${index}"></button>
                         </div>
                     `);
 
@@ -221,24 +219,24 @@ $(document).ready(function () {
     });
   }
 
-  // Function to update the selections display
+  // Function to update the disabilities display
   function updateDisabilitiesDisplay(type, text) {
-    const selectionsList = $(".select-disabilities__list");
+    const selectionsList = $(".disab-list");
     if (type === "select") {
-      selectionsList.find(".select-disabilities__list-item").each(function () {
+      selectionsList.find(".disab-item").each(function () {
         const itemText = $(this).find("span").text().trim();
         if (itemText.toLowerCase() === text.toLowerCase()) {
-          $(this).removeClass("select-disabilities__list-item--active").addClass("select-disabilities__list-item--selected");
+          $(this).removeClass("active").addClass("selected");
         }
       });
     } else if (type === "remove") {
-      selectionsList.find(".select-disabilities__list-item").each(function () {
+      selectionsList.find(".disab-item").each(function () {
         const itemText = $(this).find("span").text().trim();
         // Use getDisabilityName to compare the body part key with the displayed name
         if (itemText.toLowerCase() === getDisabilityName(text).toLowerCase()) {
           $(this)
-            .removeClass("select-disabilities__list-item--selected")
-            .removeClass("select-disabilities__list-item--active");
+            .removeClass("selected")
+            .removeClass("active");
         }
       });
     }
@@ -273,13 +271,12 @@ $(document).ready(function () {
   }
 
   // Handle remove button clicks
-  $(document).on("click", ".selections-list__item-remove", function () {
+  $(document).on("click", ".remove-btn", function () {
     const bodyPart = $(this).data("bodypart");
     const index = $(this).data("index");
 
     // Remove from disability rates
     part_disability_rate[bodyPart].splice(index, 1);
-
 
     // Update displays
     updateSelectionsDisplay();
@@ -478,31 +475,31 @@ $(document).ready(function () {
     total_payment = (Math.round(total_payment * 100) / 100).toFixed(2);
 
     // Update bilateral factor
-    $(".combined__result:first .combined__number").text(
+    $(".result-card:first h2").text(
       bilateral_rate.toFixed(1)
     );
 
     // Update disability rating
-    $(".combined__result:nth-child(2) .combined__number").text(
+    $(".result-card:nth-child(2) h1").text(
       `${disability_rate}%`
     );
 
     // Update notice text
     if (calculated_rate > 0) {
       const roundDirection = calculated_rate % 10 < 5 ? "down" : "up";
-      $(".combined__notice-text").html(`
+      $(".notice-text").html(`
                 <span>Your Combined Disability Percentage is ${calculated_rate}%</span>
                 <span>which the VA rounds ${roundDirection} to ${disability_rate}%</span>
             `);
     } else {
-      $(".combined__notice-text").html(`
+      $(".notice-text").html(`
                 <span>Add disabilities to calculate your rating</span>
                 <span></span>
             `);
     }
 
     // Update monthly payment
-    $(".combined__monthly .combined__number").text(`$${total_payment}`);
+    $(".monthly h1").text(`$${total_payment}`);
   }
 
   // Handle form inputs for dependents
@@ -523,13 +520,13 @@ $(document).ready(function () {
     $('input[name="marital-status"]').change(function () {
       if ($(this).attr("id") === "marital-status-married") {
         // Show spouse aid section
-        $('input[name="spouse-aid"]').closest('.additional-section__inputs').show();
+        $('.spouse').show();
         // Check spouse aid status
         const spouseAid = $('input[name="spouse-aid"]:checked').attr("id");
         part_disability_rate["spouse"] = spouseAid === "spouse-aid-yes" ? 1 : 2;
       } else {
         // Hide spouse aid section and reset spouse value
-        $('input[name="spouse-aid"]').closest('.additional-section__inputs').hide();
+        $('.spouse').hide();
         part_disability_rate["spouse"] = 0;
       }
       display_rate_payment();
@@ -548,12 +545,12 @@ $(document).ready(function () {
     $('input[name="d-parent"]').change(function () {
       if ($(this).attr("id") === "d-parent-yes") {
         // Show parent count section
-        $("#parent-count").closest('.additional-section__inputs').show();
+        $(".parent-count").show();
         const parentCount = parseInt($("#parent-count").val()) || 1;
         part_disability_rate["parent"] = parentCount;
       } else {
         // Hide parent count section and reset value
-        $("#parent-count").closest('.additional-section__inputs').hide();
+        $(".parent-count").hide();
         part_disability_rate["parent"] = 0;
       }
       display_rate_payment();
@@ -577,10 +574,10 @@ $(document).ready(function () {
   setupDependentHandlers();
   
   // Set initial state - hide spouse aid section since "Single" is checked by default
-  $('input[name="spouse-aid"]').closest('.additional-section__inputs').hide();
+  $('.spouse').hide();
   
   // Set initial state - hide parent count section since "No" is checked by default
-  $("#parent-count").closest('.additional-section__inputs').hide();
+  $(".parent-count").hide();
   
   display_rate_payment();
 });

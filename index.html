@@ -23,7 +23,7 @@
                     <h2>Select Disabilities and Percentages</h2>
                     <div class="disab-percent">
                         <div class="disab-list">
-                            <div class="disab-item active">
+                            <div class="disab-item">
                                 <span>Mental</span>
                                 <img class="arrow" src="assets/icons/chevron.png"
                                     alt="Chevron Icon" />
@@ -142,21 +142,7 @@
                 <div class="cal-section selection">
                     <h2>Your Selections</h2>
                     <div class="select-list">
-
-                        <div class="select-item">
-                            <div class="select-result">
-                                60% - Right Leg
-                            </div>
-                            <button class="remove-btn"></button>
-                        </div>
-
-                        <div class="select-item">
-                            <div class="select-result">
-                                60% - Right Leg
-                            </div>
-                            <button class="remove-btn"></button>
-                        </div>
-
+                        <!-- Dynamic content will be populated here by JavaScript -->
                     </div>
                 </div>
                 <div class="cal-section combined">
@@ -219,7 +205,7 @@
                     <div class="form">
                         <div class="input-group">
                             <p>How many children under 18?</p>
-                            <select class="additional-section__select" name="children-under-18" id="children-under-18">
+                            <select name="children-under-18" id="children-under-18">
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -294,8 +280,8 @@
                         </label>
                     </div>
                     <div class="form parent-count">
-                        <p class="additional-section__text input-label-text">How many dependent parents?</p>
-                        <select class="additional-section__select" name="parent-count" id="parent-count">
+                        <p>How many dependent parents?</p>
+                        <select name="parent-count" id="parent-count">
                             <option value="0">0</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
