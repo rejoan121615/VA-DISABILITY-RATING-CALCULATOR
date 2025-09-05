@@ -570,8 +570,68 @@ $(document).ready(function () {
     });
   }
 
+  // Handle select boxes for disability and percentage
+  function setupSelectBoxHandlers() {
+    let selectedDisabilityFromSelect = null;
+    let selectedPercentageFromSelect = null;
+
+    // Handle disability select change
+    $("#disability-select").change(function() {
+      const selectedValue = $(this).val();
+      if (selectedValue && selectedValue !== "Disabilities") {
+        selectedDisabilityFromSelect = selectedValue;
+        checkAndAddSelection();
+      }
+    });
+
+    // Handle percentage select change
+    $("#percentage-select").change(function() {
+      const selectedValue = $(this).val();
+      if (selectedValue && selectedValue !== "Percentage") {
+        selectedPercentageFromSelect = parseInt(selectedValue.replace("%", ""));
+        checkAndAddSelection();
+      }
+    });
+
+    // Function to check if both disability and percentage are selected, then add them
+    function checkAndAddSelection() {
+      if (selectedDisabilityFromSelect && selectedPercentageFromSelect) {
+        // Check if this disability can be added (not already selected)
+        const bodyPartKey = getBodyPartKey(selectedDisabilityFromSelect);
+        
+        if (Array.isArray(part_disability_rate[bodyPartKey]) && 
+            part_disability_rate[bodyPartKey].length === 0) {
+          
+          // Add to disability rates
+          part_disability_rate[bodyPartKey].push(selectedPercentageFromSelect);
+
+          // Update displays
+          updateSelectionsDisplay();
+          updateDisabilitiesDisplay('select', selectedDisabilityFromSelect);
+          display_rate_payment();
+
+          // Reset select boxes
+          $("#disability-select").val("Disabilities");
+          $("#percentage-select").val("Percentage");
+          selectedDisabilityFromSelect = null;
+          selectedPercentageFromSelect = null;
+        } else {
+          // Alert user that disability is already selected
+          alert(`${selectedDisabilityFromSelect} has already been selected. Please choose a different disability or remove the existing one first.`);
+          
+          // Reset select boxes
+          $("#disability-select").val("Disabilities");
+          $("#percentage-select").val("Percentage");
+          selectedDisabilityFromSelect = null;
+          selectedPercentageFromSelect = null;
+        }
+      }
+    }
+  }
+
   // Initialize
   setupDependentHandlers();
+  setupSelectBoxHandlers();
   
   // Set initial state - hide spouse aid section since "Single" is checked by default
   $('.spouse').hide();
