@@ -475,31 +475,31 @@ $(document).ready(function () {
     total_payment = (Math.round(total_payment * 100) / 100).toFixed(2);
 
     // Update bilateral factor
-    $(".result-card:first h2").text(
+    $(".combined .result-card:first h2").text(
       bilateral_rate.toFixed(1)
     );
 
     // Update disability rating
-    $(".result-card:nth-child(2) h1").text(
+    $(".combined .result-card:nth-child(2) h1").text(
       `${disability_rate}%`
     );
 
     // Update notice text
     if (calculated_rate > 0) {
       const roundDirection = calculated_rate % 10 < 5 ? "down" : "up";
-      $(".notice-text").html(`
+      $(".combined .notice-text").html(`
                 <span>Your Combined Disability Percentage is ${calculated_rate}%</span>
                 <span>which the VA rounds ${roundDirection} to ${disability_rate}%</span>
             `);
     } else {
-      $(".notice-text").html(`
+      $(".combined .notice-text").html(`
                 <span>Add disabilities to calculate your rating</span>
                 <span></span>
             `);
     }
 
     // Update monthly payment
-    $(".monthly h1").text(`$${total_payment}`);
+    $(".combined .monthly h1").text(`$${total_payment}`);
   }
 
   // Handle form inputs for dependents

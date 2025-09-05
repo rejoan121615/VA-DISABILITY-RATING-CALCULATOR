@@ -72,6 +72,10 @@ $xxl: 1400px;
 
     @include resp($xxl) {
       padding: 100px 120px;
+      width: 100%;
+      max-width: 1850px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -375,6 +379,10 @@ $xxl: 1400px;
 
       @include resp($xxl) {
         padding: 50px 40px!important;
+      }
+
+      @include resp(1800px) {
+        padding: 70px 60px!important;
       }
     }
 
