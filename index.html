@@ -16,7 +16,7 @@
 <body>
     <div class="cal-container">
         <div class="cal-wrap">
-            <h1 class="cal-title">VA DISABILITY RATING CALCULATOR</h1>
+            <h1 class="cal-title"><span>VA DISABILITY</span> <span>RATING CALCULATOR</span></h1>
 
             <div class="cal-sections">
                 <div class="cal-section disability">
@@ -100,17 +100,43 @@
                                 <button class="percent-btn">10%</button>
                                 <button class="percent-btn">20%</button>
                                 <button class="percent-btn">30%</button>
-                                <button
-                                    class="percent-btn">40%</button>
+                                <button class="percent-btn">40%</button>
                                 <button class="percent-btn">50%</button>
-                                <button
-                                    class="percent-btn">60%</button>
+                                <button class="percent-btn">60%</button>
                                 <button class="percent-btn">70%</button>
                                 <button class="percent-btn">80%</button>
                                 <button class="percent-btn">90%</button>
                                 <button class="percent-btn">100%</button>
                             </div>
                         </div>
+                        <!-- Select boxes for disability and percentage -->
+                        <div class="percent-dis-select">
+                            <select id="disability-select" class="cal-custom-select">
+                                <option value="Mental">Mental</option>
+                                <option value="Head">Head</option>
+                                <option value="Cervical / Neck">Cervical / Neck</option>
+                                <option value="Right Arm">Right Arm</option>
+                                <option value="Left Arm">Left Arm</option>
+                                <option value="Spine / Back">Spine / Back</option>
+                                <option value="GERD/IBS">GERD/IBS</option>
+                                <option value="Right Leg">Right Leg</option>
+                                <option value="Left Leg">Left Leg</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <select id="percentage-select" class="cal-custom-select">
+                                <option value="10%">10%</option>
+                                <option value="20%">20%</option>
+                                <option value="30%">30%</option>
+                                <option value="40%">40%</option>
+                                <option value="50%">50%</option>
+                                <option value="60%">60%</option>
+                                <option value="70%">70%</option>
+                                <option value="80%">80%</option>
+                                <option value="90%">90%</option>
+                                <option value="100%">100%</option>
+                            </select>
+                        </div></select>
+
                     </div>
                 </div>
                 <div class="cal-section selection">
@@ -154,7 +180,7 @@
 
                         <div class="notice">
                             <img class="icon" src="./assets/icons/info.png" alt="Info Icon" />
-                            <div>
+                            <div class="notice-text">
                                 <span>Your Combined Disability Percentage is 92%</span>
                                 <span>which the VA rounds down to 90%</span>
                             </div>

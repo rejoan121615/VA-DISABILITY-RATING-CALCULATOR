@@ -16,6 +16,27 @@
   --vet-color-list-item: #1d2e4d;
 }
 
+.cal-container .cal-sections .form select, .cal-container .cal-sections .disability .percent-dis-select .cal-custom-select {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+  width: 85px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid var(--vet-color-border);
+  color: white;
+  padding: 10px 20px;
+  background-color: #1d2e4d;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px 16px;
+}
+
 .cal-container {
   background-color: #0d1e37;
   color: #ffffff;
@@ -26,20 +47,87 @@
   cursor: pointer;
 }
 .cal-container .cal-wrap {
-  padding: 100px 120px;
+  padding: 40px 20px;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-wrap {
+    padding: 50px 80px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .cal-container .cal-wrap {
+    padding: 70px 100px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .cal-container .cal-wrap {
+    padding: 100px 120px;
+  }
 }
 .cal-container .cal-title {
-  font-size: 2rem;
   font-weight: 500;
   text-align: center;
-  color: #d8e5ff;
   margin-bottom: 60px;
+  display: flex;
+  flex-flow: column wrap;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-title {
+    display: block;
+  }
+}
+.cal-container .cal-title span:first-child {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1abbff;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-title span:first-child {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #d8e5ff;
+  }
+}
+.cal-container .cal-title span:last-child {
+  font-size: 1.4rem;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-title span:last-child {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #d8e5ff;
+  }
+}
+.cal-container .cal-title span:first-child, .cal-container .cal-title span:last-child {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1abbff;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-title span:first-child, .cal-container .cal-title span:last-child {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #d8e5ff;
+  }
 }
 .cal-container .cal-sections {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
   column-gap: var(--vet-sec-gap);
-  row-gap: calc(var(--vet-sec-gap) * 4);
+}
+@media only screen and (min-width: 768px) {
+  .cal-container .cal-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .cal-container .cal-sections {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: var(--vet-sec-gap);
+    row-gap: calc(var(--vet-sec-gap) * 4);
+  }
 }
 .cal-container .cal-sections .cal-section h2,
 .cal-container .cal-sections .cal-section h3 {
@@ -51,12 +139,28 @@
   border-radius: 5px;
   margin-bottom: var(--vet-sec-gap);
 }
-.cal-container .cal-sections .disability {
-  flex: 1 1 calc(50% - var(--vet-sec-gap));
+@media only screen and (min-width: 768px) {
+  .cal-container .cal-sections .disability,
+  .cal-container .cal-sections .selection,
+  .cal-container .cal-sections .combined {
+    grid-column: 1/span 2;
+  }
 }
-.cal-container .cal-sections .selection,
-.cal-container .cal-sections .combined {
-  flex: 1 1 calc(25% - var(--vet-sec-gap) * 0.5);
+@media only screen and (min-width: 1200px) {
+  .cal-container .cal-sections .combined {
+    grid-column: 2/span 1;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .cal-container .cal-sections .disability {
+    flex: 1 1 calc(50% - var(--vet-sec-gap));
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .cal-container .cal-sections .selection,
+  .cal-container .cal-sections .combined {
+    flex: 1 1 calc(25% - var(--vet-sec-gap) * 0.5);
+  }
 }
 .cal-container .cal-sections .smc,
 .cal-container .cal-sections .dependent,
@@ -69,11 +173,17 @@
 }
 .cal-container .cal-sections .disability .disab-list {
   flex: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: var(--vet-list-gap);
 }
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-sections .disability .disab-list {
+    display: flex;
+  }
+}
 .cal-container .cal-sections .disability .disab-item {
+  min-width: 250px;
   border: 1px solid var(--vet-color-border);
   background-color: var(--vet-color-list-item);
   color: #ffffff;
@@ -107,17 +217,30 @@
   display: block;
 }
 .cal-container .cal-sections .disability .percent-list {
+  display: none;
   flex: 1.8;
   border: 1px solid var(--vet-color-border);
-  border-left: 5px solid;
-  border-image: linear-gradient(0deg, rgb(0, 39, 117) 0%, rgb(0, 83, 252) 50%, rgb(0, 39, 117) 100%);
-  border-image-slice: 1;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-sections .disability .percent-list {
+    display: block;
+    margin-left: 10px;
+    position: relative;
+  }
+  .cal-container .cal-sections .disability .percent-list::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -5px;
+    width: 5px;
+    height: calc(100% + 2px);
+    background: linear-gradient(0deg, #263d67 0%, #0053fc 50%, #263d67 100%);
+  }
 }
 .cal-container .cal-sections .disability .percent-list .percent-btns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--vet-sec-gap);
-  padding: 70px 60px;
   height: 100%;
 }
 .cal-container .cal-sections .disability .percent-list .percent-btns .percent-btn {
@@ -134,13 +257,41 @@
 .cal-container .cal-sections .disability .percent-list .percent-btns .percent-btn:hover {
   background: linear-gradient(90deg, rgb(0, 43, 128) 0%, rgb(0, 63, 189) 100%);
 }
+.cal-container .cal-sections .disability .percent-dis-select {
+  padding: 15px;
+  width: 100%;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-sections .disability .percent-dis-select {
+    display: none;
+  }
+}
+.cal-container .cal-sections .disability .percent-dis-select .cal-custom-select {
+  width: 100%;
+  padding: 20px;
+}
+.cal-container .cal-sections .disability .percent-dis-select .cal-custom-select:last-child {
+  margin-top: 5px;
+}
+@media only screen and (min-width: 1200px) {
+  .cal-container .cal-sections .selection {
+    grid-column: 1/span 1;
+    display: flex;
+    flex-flow: column wrap;
+  }
+}
 .cal-container .cal-sections .selection .select-list {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--vet-color-border);
   gap: 10px;
-  padding: 70px 60px;
-  height: 575px;
+  padding: 30px;
+  height: auto;
+}
+@media only screen and (min-width: 1200px) {
+  .cal-container .cal-sections .selection .select-list {
+    flex: 1;
+  }
 }
 .cal-container .cal-sections .selection .select-list .select-item {
   padding: 12px 16px;
@@ -160,6 +311,26 @@
   cursor: pointer;
   width: 20px;
   height: 20px;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-sections .percent-list,
+  .cal-container .cal-sections .select-list {
+    padding: 50px !important;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .cal-container .cal-sections .percent-list,
+  .cal-container .cal-sections .select-list {
+    padding: 50px 40px !important;
+  }
+}
+.cal-container .cal-sections .combined {
+  order: 1;
+}
+@media only screen and (min-width: 992px) {
+  .cal-container .cal-sections .combined {
+    order: 0;
+  }
 }
 .cal-container .cal-sections .combined .combined-wrap {
   display: grid;
@@ -199,6 +370,9 @@
   height: 25px;
   display: block;
   margin-right: 10px;
+}
+.cal-container .cal-sections .combined .combined-wrap .notice .notice-text {
+  text-align: right;
 }
 .cal-container .cal-sections .combined .combined-wrap .notice span {
   display: block;
@@ -245,26 +419,6 @@
 }
 .cal-container .cal-sections .form .input-group p {
   margin-bottom: 10px;
-}
-.cal-container .cal-sections .form select {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  display: block;
-  width: 85px;
-  background-color: transparent;
-  border-radius: 5px;
-  border: 1px solid var(--vet-color-border);
-  color: white;
-  padding: 10px 20px;
-  background-color: #1d2e4d;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 16px 16px;
 }
 .cal-container .cal-sections .form input[type=radio] {
   appearance: none;
