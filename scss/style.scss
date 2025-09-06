@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter";
 }
 
 :root {
@@ -143,8 +143,8 @@ $xxl: 1400px;
     .cal-section {
       h2,
       h3 {
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 500;
         background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0));
         color: #d8e5ff;
         padding: 15px 0px 15px 20px;
@@ -217,6 +217,7 @@ $xxl: 1400px;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         font-size: 18px;
+        font-weight: 400;
         .arrow {
           display: block;
           width: 16px;
@@ -288,8 +289,8 @@ $xxl: 1400px;
             color: #c4d7ff;
             border-radius: 5px;
             text-align: center;
-            font-size: 2.3rem;
-            font-weight: 700;
+            font-size: 30px;
+            font-weight: bold;
             cursor: pointer;
             border: none;
             transition: background-color 0.2s ease;
@@ -330,6 +331,10 @@ $xxl: 1400px;
         flex-flow: column wrap;
       }
 
+      h2 {
+        padding-left: 20px;
+      }
+
       .select-list {
         display: flex;
         flex-direction: column;
@@ -344,7 +349,7 @@ $xxl: 1400px;
         }
 
         .select-item {
-          padding: 12px 16px;
+          padding: 10px 20px;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -356,6 +361,13 @@ $xxl: 1400px;
           );
           border: 1px solid #00245b;
 
+          .select-result {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: normal;
+            color: #c8dbff;
+          }
+
           .remove-btn {
             margin: 0;
             padding: 0;
@@ -364,8 +376,8 @@ $xxl: 1400px;
             background-size: 100% 100%;
             border: none;
             cursor: pointer;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
           }
         }
       }
@@ -394,7 +406,7 @@ $xxl: 1400px;
 
       .combined-wrap {
         display: grid;
-        grid-template-rows: 1fr 1.2fr 1fr 1.5fr 1fr;
+        grid-template-rows: 80px 100px 1fr 168px 1fr;
         flex-direction: column;
         align-items: stretch;
         text-align: center;
@@ -406,12 +418,14 @@ $xxl: 1400px;
 
         p {
           text-align: left;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: normal;
         }
 
         h1 {
-          font-size: 2.2rem;
-          font-weight: 700;
-          color: #00a1ff;
+          font-size: 50px;
+          font-weight: bold;
           color: var(--vet-color-secondary);
           @include resp($lg) {
             font-size: 45px;
@@ -427,12 +441,20 @@ $xxl: 1400px;
           background-color: #051a3b;
         }
 
+
+        .estimated,
+        .bilaterals {
+          padding: 0px 30px 0px 20px;
+        }
+
         .result-card {
           h2 {
             background: transparent;
             padding: 0;
             margin: 0;
-            font-size: 32px;
+            font-size: 30px;
+            font-weight: 500;
+
           }
         }
 
@@ -440,6 +462,7 @@ $xxl: 1400px;
           font-size: 0.8rem;
           color: #a8b0c2;
           background-color: transparent;
+          justify-content: flex-start;
           .icon {
             width: 25px;
             height: 25px;
@@ -448,17 +471,20 @@ $xxl: 1400px;
           }
 
           .notice-text {
-            text-align: right;
+            text-align: left;
           }
 
           span {
             display: block;
+            font-size: 11px;
+            font-weight: 400;
           }
         }
 
         .monthly {
           flex-flow: column wrap;
           justify-content: center;
+          padding: 40px 30px;
           p {
             margin-bottom: 10px;
           }
@@ -473,12 +499,12 @@ $xxl: 1400px;
         #schedule-btn {
           background-color: var(--vet-color-action);
           border: 1px solid #f80001;
-          border: none;
           color: white;
+          font-size: 15px;
           font-weight: 500;
-          font-size: 1rem;
+          line-height: normal;
           display: inline-block;
-          padding: 20px 30px;
+          padding: 15px 20px;
           border-radius: 50px;
         }
       }
