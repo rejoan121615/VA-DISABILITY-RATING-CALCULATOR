@@ -147,16 +147,18 @@ $(document).ready(function () {
     // Remove active class from percentage buttons
     // $('.percent-btn').removeClass('active');
 
-    // Prevent selecting if already selected
+    // Prevent selecting if already selected (except for "Other" which can be selected multiple times)
     const bodyPartKey = getBodyPartKey($(this).find("span").text());
+    const disabilityName = $(this).find("span").text();
+    
     if (
       selectedDisability === null &&
       Array.isArray(part_disability_rate[bodyPartKey]) &&
-      part_disability_rate[bodyPartKey].length === 0
+      (part_disability_rate[bodyPartKey].length === 0 || disabilityName.toLowerCase() === "other")
     ) {
       $(this).addClass("active");
       // Store the selected disability
-      selectedDisability = $(this).find("span").text();
+      selectedDisability = disabilityName;
     }
   });
 
@@ -226,17 +228,27 @@ $(document).ready(function () {
       selectionsList.find(".disab-item").each(function () {
         const itemText = $(this).find("span").text().trim();
         if (itemText.toLowerCase() === text.toLowerCase()) {
-          $(this).removeClass("active").addClass("selected");
+          // Don't mark "Other" as selected so it can be selected multiple times
+          if (text.toLowerCase() !== "other") {
+            $(this).removeClass("active").addClass("selected");
+          } else {
+            $(this).removeClass("active");
+          }
         }
       });
     } else if (type === "remove") {
       selectionsList.find(".disab-item").each(function () {
         const itemText = $(this).find("span").text().trim();
         // Use getDisabilityName to compare the body part key with the displayed name
-        if (itemText.toLowerCase() === getDisabilityName(text).toLowerCase()) {
-          $(this)
-            .removeClass("selected")
-            .removeClass("active");
+        const disabilityName = getDisabilityName(text);
+        if (itemText.toLowerCase() === disabilityName.toLowerCase()) {
+          // Only remove "selected" class if not "Other", or if removing the last "Other" item
+          if (disabilityName.toLowerCase() !== "other" || 
+              (disabilityName.toLowerCase() === "other" && part_disability_rate.addition.length === 0)) {
+            $(this)
+              .removeClass("selected")
+              .removeClass("active");
+          }
         }
       });
     }
@@ -596,11 +608,11 @@ $(document).ready(function () {
     // Function to check if both disability and percentage are selected, then add them
     function checkAndAddSelection() {
       if (selectedDisabilityFromSelect && selectedPercentageFromSelect) {
-        // Check if this disability can be added (not already selected)
+        // Check if this disability can be added (not already selected, except for "Other")
         const bodyPartKey = getBodyPartKey(selectedDisabilityFromSelect);
         
         if (Array.isArray(part_disability_rate[bodyPartKey]) && 
-            part_disability_rate[bodyPartKey].length === 0) {
+            (part_disability_rate[bodyPartKey].length === 0 || selectedDisabilityFromSelect.toLowerCase() === "other")) {
           
           // Add to disability rates
           part_disability_rate[bodyPartKey].push(selectedPercentageFromSelect);
