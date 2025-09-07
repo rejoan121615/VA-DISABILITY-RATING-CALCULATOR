@@ -63,7 +63,7 @@
 @media only screen and (min-width: 1400px) {
   .cal-container .cal-wrap {
     padding: 100px 0px;
-    max-width: 1350px;
+    max-width: 1240px;
   }
 }
 .cal-container .cal-title {
@@ -152,6 +152,14 @@
     width: 330px;
   }
 }
+@media only screen and (min-width: 1400px) {
+  .cal-container .cal-sections .smc,
+  .cal-container .cal-sections .dependent,
+  .cal-container .cal-sections .maritial-status,
+  .cal-container .cal-sections .parents {
+    width: 302px;
+  }
+}
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .disability {
     width: 670px;
@@ -161,6 +169,11 @@
   }
   .cal-container .cal-sections .disability > div {
     flex: 1;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .cal-container .cal-sections .disability {
+    width: 556px;
   }
 }
 .cal-container .cal-sections .disability .disab-percent {
@@ -499,6 +512,11 @@
 }
 .cal-container .cal-sections .maritial-status {
   display: block;
+}
+@media only screen and (min-width: 1400px) {
+  .cal-container .cal-sections .maritial-status .spouse {
+    padding-right: 0px;
+  }
 }
 .cal-container .cal-sections .maritial-status .spouse .large {
   margin-bottom: 0;

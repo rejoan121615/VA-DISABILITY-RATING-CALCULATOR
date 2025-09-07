@@ -75,7 +75,7 @@ $xxl: 1400px;
 
     @include resp($xxl) {
       padding: 100px 0px;
-      max-width: 1350px;
+      max-width: 1240px;
     }
   }
 
@@ -176,6 +176,9 @@ $xxl: 1400px;
       @include resp($lg) {
         width: 330px;
       }
+      @include resp($xxl) {
+        width: 302px;
+      }
     }
 
     .disability {
@@ -188,6 +191,10 @@ $xxl: 1400px;
         & > div {
           flex: 1;
         }
+      }
+
+      @include resp($xxl) {
+        width: 556px;
       }
 
       
@@ -591,6 +598,9 @@ $xxl: 1400px;
     .maritial-status {
       display: block;
       .spouse {
+        @include resp($xxl) {
+          padding-right: 0px;
+        }
         .large {
           margin-bottom: 0;
         }
