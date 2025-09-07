@@ -126,12 +126,13 @@ $xxl: 1400px;
   .cal-sections {
     display: flex;
     flex-flow: column wrap;
-    row-gap: 30px;
+    row-gap: var(--vet-sec-gap);
     column-gap: var(--vet-sec-gap);
-
+    
     @include resp($lg) {
       flex-flow: row wrap;
       justify-content: center;
+      row-gap: 30px;
     }
 
   
@@ -314,6 +315,7 @@ $xxl: 1400px;
 
       .percent-dis-select {
         padding: 15px;
+        padding-bottom: 25px;
         width: 100%;
 
         @include resp($lg) {
@@ -333,7 +335,6 @@ $xxl: 1400px;
 
     .selection {
       width: 330px;
-      height: 605px;
       display: flex;
       flex-flow: column wrap;
       @include resp($xl) {
@@ -349,14 +350,18 @@ $xxl: 1400px;
         flex-direction: column;
         border: 1px solid var(--vet-color-border);
         gap: 10px;
-        padding: 44px;
-        // height: 575px; resp
         height: auto;
         overflow-y: auto;
         flex: 1;
+        padding: 24px;
+        margin-bottom: 20px;
+        @include resp($lg) {
+          padding: 44px;
+          margin-bottom: 0px;
+        }
 
         .select-item {
-          width: 240px;
+          width: 100%;
           padding: 10px 20px;
           display: flex;
           justify-content: space-between;
@@ -368,6 +373,9 @@ $xxl: 1400px;
             rgba(2, 21, 46, 1) 100%
           );
           border: 1px solid #00245b;
+          @include resp($lg) {
+            width: 240px;
+          }
 
           .select-result {
             font-size: 14px;
@@ -391,21 +399,7 @@ $xxl: 1400px;
       }
     }
 
-    .percent-list,
-    .select-list {
-      // @include resp($lg) {
-      //   padding: 50px !important;
-      // }
-
-      // @include resp($xxl) {
-      //   padding: 50px 40px !important;
-      // }
-
-      // @include resp(1800px) {
-      //   padding: 70px 60px !important;
-      // }
-    }
-
+  
     .combined {
       order: 1;
       width: 330px;
@@ -516,6 +510,8 @@ $xxl: 1400px;
 
     .form {
       padding: 15px 20px;
+      padding-bottom: 30px;
+
       p {
         font-size: 1rem;
         font-weight: 300;
@@ -584,6 +580,7 @@ $xxl: 1400px;
     }
 
     .maritial-status {
+      display: block;
       .spouse {
         .large {
           margin-bottom: 0;
@@ -592,6 +589,10 @@ $xxl: 1400px;
           font-size: 0.8rem;
         }
       }
+    }
+
+    .parents {
+      display: block;
     }
   }
 }
