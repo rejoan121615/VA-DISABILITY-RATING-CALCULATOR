@@ -62,20 +62,20 @@ $xxl: 1400px;
   }
 
   .cal-wrap {
-    padding: 40px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 330px;
+    padding-top: 70px;
+    padding-bottom: 40px;
     @include resp($lg) {
-      padding: 50px 80px;
-    }
-    @include resp($xl) {
-      padding: 70px 100px;
+      padding: 50px 0px;
+      max-width: 670px;
     }
 
     @include resp($xxl) {
-      padding: 100px 120px;
-      width: 100%;
-      max-width: 1850px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 100px 0px;
+      max-width: 1350px;
     }
   }
 
@@ -124,26 +124,24 @@ $xxl: 1400px;
 
   //   calculator sections
   .cal-sections {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-flow: column wrap;
     row-gap: 30px;
     column-gap: var(--vet-sec-gap);
 
-    @include resp($md) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include resp($xxl) {
-      display: flex;
+    @include resp($lg) {
       flex-flow: row wrap;
-      column-gap: var(--vet-sec-gap);
-      row-gap: calc(var(--vet-sec-gap) * 4);
+      justify-content: center;
     }
 
+  
     .cal-section {
+      display: flex;
+      flex-flow: column wrap;
       h2,
       h3 {
         font-size: 16px;
+        line-height: 20px;
         font-weight: 500;
         background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0));
         color: #d8e5ff;
@@ -151,13 +149,15 @@ $xxl: 1400px;
         border-radius: 5px;
         margin-bottom: var(--vet-sec-gap);
       }
+      & > div {
+        flex: 1;
+      }
     }
 
-    .disability,
     .selection,
     .combined {
       @include resp($md) {
-        grid-column: 1 / span 2;
+        // grid-column: 1 / span 2;
       }
     }
 
@@ -167,29 +167,30 @@ $xxl: 1400px;
       }
     }
 
-    // First row items - accounting for gaps more precisely
-    .disability {
-      @include resp($xl) {
-        flex: 1 1 calc(50% - var(--vet-sec-gap));
-      }
-    }
 
-    .selection,
-    .combined {
-      @include resp($xxl) {
-        flex: 1 1 calc(25% - var(--vet-sec-gap) * 0.5);
-      }
-    }
-
-    // Second row items - accounting for gaps more precisely
     .smc,
     .dependent,
     .maritial-status,
     .parents {
-      flex: 1 1 calc(25% - var(--vet-sec-gap) * 0.75);
+      @include resp($lg) {
+        width: 330px;
+      }
     }
 
     .disability {
+      @include resp($lg) {
+        // width: 556px;
+        width: 670px;
+        height: 605px;
+        display: flex;
+        flex-flow: column wrap;
+        & > div {
+          flex: 1;
+        }
+      }
+
+      
+
       .disab-percent {
         display: flex;
       }
@@ -197,18 +198,17 @@ $xxl: 1400px;
         flex: 1;
         display: none;
         @include resp($lg) {
-          display: flex;
+          display: grid;
+          grid-template-columns: 1fr;
+          row-gap: 5px;
         }
-        flex-direction: column;
-        gap: var(--vet-list-gap);
       }
 
       .disab-item {
-        min-width: 250px;
         border: 1px solid var(--vet-color-border);
         background-color: var(--vet-color-list-item);
         color: #ffffff;
-        padding: 15px 18px;
+        padding: 10px 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -216,8 +216,12 @@ $xxl: 1400px;
         transition: background-color 0.2s ease;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        font-size: 18px;
-        font-weight: 400;
+
+        span {
+          font-size: 18px;
+          font-weight: 400;
+        }
+
         .arrow {
           display: block;
           width: 16px;
@@ -244,7 +248,8 @@ $xxl: 1400px;
 
       .percent-list {
         display: none;
-        flex: 1.8;
+        width: 325px;
+        // flex: 1.8;
         border: 1px solid var(--vet-color-border);
         @include resp($lg) {
           display: block;
@@ -264,7 +269,6 @@ $xxl: 1400px;
               #263d67 100%
             );
           }
-          
         }
         // border-left: 5px solid;
         // border-image: linear-gradient(
@@ -276,8 +280,11 @@ $xxl: 1400px;
         // border-image-slice: 1;
         .percent-btns {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(2, 117.5px);
+          grid-template-rows: repeat(5, 80px);
           gap: var(--vet-sec-gap);
+          align-content: center;
+          justify-content: center;
           height: 100%;
 
           .percent-btn {
@@ -325,10 +332,12 @@ $xxl: 1400px;
     }
 
     .selection {
+      width: 330px;
+      height: 605px;
+      display: flex;
+      flex-flow: column wrap;
       @include resp($xl) {
         grid-column: 1 / span 1;
-        display: flex;
-        flex-flow: column wrap;
       }
 
       h2 {
@@ -340,15 +349,14 @@ $xxl: 1400px;
         flex-direction: column;
         border: 1px solid var(--vet-color-border);
         gap: 10px;
-        padding: 30px; 
+        padding: 44px;
         // height: 575px; resp
         height: auto;
-
-        @include resp($xl) {
-          flex: 1;
-        }
+        overflow-y: auto;
+        flex: 1;
 
         .select-item {
+          width: 240px;
           padding: 10px 20px;
           display: flex;
           justify-content: space-between;
@@ -385,21 +393,23 @@ $xxl: 1400px;
 
     .percent-list,
     .select-list {
-      @include resp($lg) {
-        padding: 50px!important;
-      }
+      // @include resp($lg) {
+      //   padding: 50px !important;
+      // }
 
-      @include resp($xxl) {
-        padding: 50px 40px!important;
-      }
+      // @include resp($xxl) {
+      //   padding: 50px 40px !important;
+      // }
 
-      @include resp(1800px) {
-        padding: 70px 60px!important;
-      }
+      // @include resp(1800px) {
+      //   padding: 70px 60px !important;
+      // }
     }
 
     .combined {
       order: 1;
+      width: 330px;
+      height: 605px;
       @include resp($lg) {
         order: 0;
       }
@@ -410,9 +420,8 @@ $xxl: 1400px;
         flex-direction: column;
         align-items: stretch;
         text-align: center;
-        height: 575px;
         background-color: #02152e;
-        padding: var(--vet-list-gap);
+        padding: 4px;
         row-gap: var(--vet-list-gap);
         border: 1px solid var(--vet-color-border);
 
@@ -427,9 +436,6 @@ $xxl: 1400px;
           font-size: 50px;
           font-weight: bold;
           color: var(--vet-color-secondary);
-          @include resp($lg) {
-            font-size: 45px;
-          }
         }
 
         .result-card,
@@ -440,7 +446,6 @@ $xxl: 1400px;
           justify-content: space-between;
           background-color: #051a3b;
         }
-
 
         .estimated,
         .bilaterals {
@@ -454,7 +459,6 @@ $xxl: 1400px;
             margin: 0;
             font-size: 30px;
             font-weight: 500;
-
           }
         }
 
@@ -501,10 +505,10 @@ $xxl: 1400px;
           border: 1px solid #f80001;
           color: white;
           font-size: 15px;
+          line-height: 18px;
           font-weight: 500;
-          line-height: normal;
           display: inline-block;
-          padding: 15px 20px;
+          padding: 15px 19px;
           border-radius: 50px;
         }
       }
