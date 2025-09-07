@@ -395,6 +395,15 @@ $xxl: 1400px;
             width: 18px;
             height: 18px;
           }
+
+          &.no-select-item {
+            justify-content: center;
+            .select-result {
+              color: #7a8ca8;
+              font-style: italic;
+              text-align: center;
+            }
+          }
         }
       }
     }

@@ -181,6 +181,7 @@ $(document).ready(function () {
 
       //   update disability class
       updateDisabilitiesDisplay('select', selectedDisability);
+      updateSelectBoxesDisplay('select', selectedDisability);
 
       // Calculate and update combined rating
       display_rate_payment();
@@ -200,11 +201,14 @@ $(document).ready(function () {
     // Only process actual disability body parts (exclude spouse, children, children18, parent)
     const disabilityBodyParts = ['bd', 'la', 'ra', 'll', 'rl', 'head', 'cervical', 'spine', 'mental', 'addition'];
     
+    let hasSelections = false;
+    
     disabilityBodyParts.forEach((bodyPart) => {
       if (
         Array.isArray(part_disability_rate[bodyPart]) &&
         part_disability_rate[bodyPart].length > 0
       ) {
+        hasSelections = true;
         part_disability_rate[bodyPart].forEach((percentage, index) => {
           const disabilityName = getDisabilityName(bodyPart);
           const selectionItem = $(`
@@ -220,6 +224,18 @@ $(document).ready(function () {
         });
       }
     });
+
+    // If no selections, show placeholder
+    if (!hasSelections) {
+      const placeholderItem = $(`
+        <div class="select-item no-select-item">
+          <div class="select-result">
+            Select disabilities and percentages
+          </div>
+        </div>
+      `);
+      selectionsList.append(placeholderItem);
+    }
   }
 
   // Function to update the disabilities display
@@ -266,6 +282,44 @@ $(document).ready(function () {
     }
   }
 
+  // Function to update the select boxes display (disable/enable options)
+  function updateSelectBoxesDisplay(type, text) {
+    if (type === "select") {
+      // Find the option in disability select and disable it
+      $("#disability-select option").each(function () {
+        const optionText = $(this).val();
+        if (optionText && optionText.toLowerCase() === text.toLowerCase()) {
+          // For "Other", disable only when we reach 3 items
+          if (text.toLowerCase() !== "other") {
+            $(this).prop("disabled", true);
+          } else {
+            // Check if "Other" has reached the 3-item limit
+            if (part_disability_rate.addition.length >= 3) {
+              $(this).prop("disabled", true);
+            }
+          }
+        }
+      });
+    } else if (type === "remove") {
+      // Find the option in disability select and enable it
+      const disabilityName = getDisabilityName(text);
+      $("#disability-select option").each(function () {
+        const optionText = $(this).val();
+        if (optionText && optionText.toLowerCase() === disabilityName.toLowerCase()) {
+          // For "Other", enable only if we go below 3 items
+          if (disabilityName.toLowerCase() !== "other") {
+            $(this).prop("disabled", false);
+          } else {
+            // For "Other", enable if count drops below 3
+            if (part_disability_rate.addition.length < 3) {
+              $(this).prop("disabled", false);
+            }
+          }
+        }
+      });
+    }
+  }
+
   // Convert body part key back to disability name
   function getDisabilityName(bodyPartKey) {
     switch (bodyPartKey) {
@@ -305,6 +359,7 @@ $(document).ready(function () {
     // Update displays
     updateSelectionsDisplay();
     updateDisabilitiesDisplay('remove', bodyPart);
+    updateSelectBoxesDisplay('remove', bodyPart);
     display_rate_payment();
   });
 
@@ -633,6 +688,7 @@ $(document).ready(function () {
           // Update displays
           updateSelectionsDisplay();
           updateDisabilitiesDisplay('select', selectedDisabilityFromSelect);
+          updateSelectBoxesDisplay('select', selectedDisabilityFromSelect);
           display_rate_payment();
 
           // Reset select boxes
@@ -641,10 +697,7 @@ $(document).ready(function () {
           selectedDisabilityFromSelect = null;
           selectedPercentageFromSelect = null;
         } else {
-          // Alert user that disability is already selected
-          alert(`${selectedDisabilityFromSelect} has already been selected. Please choose a different disability or remove the existing one first.`);
-          
-          // Reset select boxes
+          // Reset select boxes when disability is already selected
           $("#disability-select").val("Disabilities");
           $("#percentage-select").val("Percentage");
           selectedDisabilityFromSelect = null;
@@ -669,5 +722,7 @@ $(document).ready(function () {
   // Set initial state - hide parent count section since "No" is checked by default
   $(".parent-count").hide();
   
+  // Initialize displays
+  updateSelectionsDisplay();
   display_rate_payment();
 });
