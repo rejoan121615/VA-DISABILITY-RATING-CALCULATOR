@@ -303,24 +303,28 @@
 .cal-container .cal-sections .selection .select-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: 1px solid var(--vet-color-border);
   gap: 10px;
   height: auto;
   overflow-y: auto;
   flex: 1;
-  padding: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   margin-bottom: 20px;
   max-height: 80svh;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .selection .select-list {
-    padding: 44px;
+    padding-top: 44px;
+    padding-bottom: 44px;
     margin-bottom: 0px;
     max-height: 545px;
   }
 }
 .cal-container .cal-sections .selection .select-list .select-item {
   width: 100%;
+  max-width: 280px;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;

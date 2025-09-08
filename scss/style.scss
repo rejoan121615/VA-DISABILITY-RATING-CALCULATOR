@@ -128,14 +128,13 @@ $xxl: 1400px;
     flex-flow: column wrap;
     row-gap: var(--vet-sec-gap);
     column-gap: var(--vet-sec-gap);
-    
+
     @include resp($lg) {
       flex-flow: row wrap;
       justify-content: center;
       row-gap: 30px;
     }
 
-  
     .cal-section {
       display: flex;
       flex-flow: column wrap;
@@ -168,7 +167,6 @@ $xxl: 1400px;
       }
     }
 
-
     .smc,
     .dependent,
     .maritial-status,
@@ -196,8 +194,6 @@ $xxl: 1400px;
       @include resp($xxl) {
         width: 556px;
       }
-
-      
 
       .disab-percent {
         display: flex;
@@ -355,22 +351,28 @@ $xxl: 1400px;
       .select-list {
         display: flex;
         flex-direction: column;
+        align-items: center;
         border: 1px solid var(--vet-color-border);
         gap: 10px;
         height: auto;
         overflow-y: auto;
         flex: 1;
-        padding: 24px;
+        // padding: 24px;
+        padding-top: 24px;
+        padding-bottom: 24px;
         margin-bottom: 20px;
         max-height: 80svh;
+        // scrollbar-gutter: stable both-edges;
         @include resp($lg) {
-          padding: 44px;
+          padding-top: 44px;
+          padding-bottom: 44px;
           margin-bottom: 0px;
           max-height: 545px;
         }
 
         .select-item {
           width: 100%;
+          max-width: 280px;
           padding: 10px 20px;
           display: flex;
           justify-content: space-between;
@@ -417,7 +419,6 @@ $xxl: 1400px;
       }
     }
 
-  
     .combined {
       order: 1;
       width: 330px;
