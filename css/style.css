@@ -310,11 +310,13 @@
   flex: 1;
   padding: 24px;
   margin-bottom: 20px;
+  max-height: 80svh;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .selection .select-list {
     padding: 44px;
     margin-bottom: 0px;
+    max-height: 545px;
   }
 }
 .cal-container .cal-sections .selection .select-list .select-item {
@@ -428,7 +430,6 @@
   font-weight: 400;
 }
 .cal-container .cal-sections .combined .combined-wrap .monthly {
-  display: flex;
   flex-flow: row wrap;
   justify-content: center;
   padding: 40px 30px;

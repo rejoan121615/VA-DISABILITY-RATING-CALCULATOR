@@ -147,15 +147,14 @@ $(document).ready(function () {
     // Remove active class from percentage buttons
     // $('.percent-btn').removeClass('active');
 
-    // Prevent selecting if already selected (except for "Other" which can be selected up to 3 times)
+    // Prevent selecting if already selected up to 10 times (for all disabilities)
     const bodyPartKey = getBodyPartKey($(this).find("span").text());
     const disabilityName = $(this).find("span").text();
     
     if (
       selectedDisability === null &&
       Array.isArray(part_disability_rate[bodyPartKey]) &&
-      (part_disability_rate[bodyPartKey].length === 0 || 
-       (disabilityName.toLowerCase() === "other" && part_disability_rate[bodyPartKey].length < 3))
+      part_disability_rate[bodyPartKey].length < 10
     ) {
       $(this).addClass("active");
       // Store the selected disability
@@ -245,15 +244,11 @@ $(document).ready(function () {
       selectionsList.find(".disab-item").each(function () {
         const itemText = $(this).find("span").text().trim();
         if (itemText.toLowerCase() === text.toLowerCase()) {
-          // For "Other", mark as selected only when we reach 3 items
-          if (text.toLowerCase() !== "other") {
-            $(this).removeClass("active").addClass("selected");
-          } else {
-            $(this).removeClass("active");
-            // Check if "Other" has reached the 3-item limit
-            if (part_disability_rate.addition.length >= 3) {
-              $(this).addClass("selected");
-            }
+          // Mark as selected only when we reach 10 items for any disability
+          $(this).removeClass("active");
+          const bodyPartKey = getBodyPartKey(itemText);
+          if (Array.isArray(part_disability_rate[bodyPartKey]) && part_disability_rate[bodyPartKey].length >= 10) {
+            $(this).addClass("selected");
           }
         }
       });
@@ -263,17 +258,13 @@ $(document).ready(function () {
         // Use getDisabilityName to compare the body part key with the displayed name
         const disabilityName = getDisabilityName(text);
         if (itemText.toLowerCase() === disabilityName.toLowerCase()) {
-          // For "Other", only remove "selected" class if we go below 3 items
-          if (disabilityName.toLowerCase() !== "other") {
-            $(this)
-              .removeClass("selected")
-              .removeClass("active");
-          } else {
-            // For "Other", remove selected class if count drops below 3, or if no items left
-            if (part_disability_rate.addition.length < 3) {
+          // Remove 'selected' class if we go below 10 items for any disability
+          const bodyPartKey = getBodyPartKey(disabilityName);
+          if (Array.isArray(part_disability_rate[bodyPartKey])) {
+            if (part_disability_rate[bodyPartKey].length < 10) {
               $(this).removeClass("selected");
             }
-            if (part_disability_rate.addition.length === 0) {
+            if (part_disability_rate[bodyPartKey].length === 0) {
               $(this).removeClass("active");
             }
           }
@@ -289,14 +280,10 @@ $(document).ready(function () {
       $("#disability-select option").each(function () {
         const optionText = $(this).val();
         if (optionText && optionText.toLowerCase() === text.toLowerCase()) {
-          // For "Other", disable only when we reach 3 items
-          if (text.toLowerCase() !== "other") {
+          // Disable only when we reach 10 items for any disability
+          const bodyPartKey = getBodyPartKey(optionText);
+          if (Array.isArray(part_disability_rate[bodyPartKey]) && part_disability_rate[bodyPartKey].length >= 10) {
             $(this).prop("disabled", true);
-          } else {
-            // Check if "Other" has reached the 3-item limit
-            if (part_disability_rate.addition.length >= 3) {
-              $(this).prop("disabled", true);
-            }
           }
         }
       });
@@ -306,14 +293,10 @@ $(document).ready(function () {
       $("#disability-select option").each(function () {
         const optionText = $(this).val();
         if (optionText && optionText.toLowerCase() === disabilityName.toLowerCase()) {
-          // For "Other", enable only if we go below 3 items
-          if (disabilityName.toLowerCase() !== "other") {
+          // Enable only if we go below 10 items for any disability
+          const bodyPartKey = getBodyPartKey(optionText);
+          if (Array.isArray(part_disability_rate[bodyPartKey]) && part_disability_rate[bodyPartKey].length < 10) {
             $(this).prop("disabled", false);
-          } else {
-            // For "Other", enable if count drops below 3
-            if (part_disability_rate.addition.length < 3) {
-              $(this).prop("disabled", false);
-            }
           }
         }
       });
