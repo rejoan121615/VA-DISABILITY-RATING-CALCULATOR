@@ -658,13 +658,9 @@ $(document).ready(function () {
     // Function to check if both disability and percentage are selected, then add them
     function checkAndAddSelection() {
       if (selectedDisabilityFromSelect && selectedPercentageFromSelect) {
-        // Check if this disability can be added (not already selected, except for "Other" up to 3 times)
+        // Allow any disability to be selected up to 10 times
         const bodyPartKey = getBodyPartKey(selectedDisabilityFromSelect);
-        
-        if (Array.isArray(part_disability_rate[bodyPartKey]) && 
-            (part_disability_rate[bodyPartKey].length === 0 || 
-             (selectedDisabilityFromSelect.toLowerCase() === "other" && part_disability_rate[bodyPartKey].length < 3))) {
-          
+        if (Array.isArray(part_disability_rate[bodyPartKey]) && part_disability_rate[bodyPartKey].length < 10) {
           // Add to disability rates
           part_disability_rate[bodyPartKey].push(selectedPercentageFromSelect);
 
@@ -680,7 +676,7 @@ $(document).ready(function () {
           selectedDisabilityFromSelect = null;
           selectedPercentageFromSelect = null;
         } else {
-          // Reset select boxes when disability is already selected
+          // Reset select boxes when disability is already selected up to the limit
           $("#disability-select").val("Disabilities");
           $("#percentage-select").val("Percentage");
           selectedDisabilityFromSelect = null;
