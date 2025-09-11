@@ -62,9 +62,9 @@ $xxl: 1400px;
   }
 
   & * {
-    margin: 0!important;
-    padding: 0!important;
-    line-height: normal!important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: normal !important;
   }
 
   .cal-wrap {
@@ -149,7 +149,11 @@ $xxl: 1400px;
         font-size: 16px !important;
         line-height: 20px !important;
         font-weight: 500 !important;
-        background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0)) !important;
+        background-image: linear-gradient(
+          90deg,
+          #022877,
+          rgba(2, 40, 119, 0)
+        ) !important;
         color: #d8e5ff !important;
         padding: 15px 0px 15px 20px !important;
         border-radius: 5px !important;
@@ -246,7 +250,11 @@ $xxl: 1400px;
 
         &.active,
         &.selected {
-          background-image: linear-gradient(-90deg, #0048da, #002776) !important;
+          background-image: linear-gradient(
+            -90deg,
+            #0048da,
+            #002776
+          ) !important;
           .arrow {
             display: none !important;
           }
@@ -404,7 +412,7 @@ $xxl: 1400px;
           .remove-btn {
             margin: 0 !important;
             padding: 0 !important;
-            background: transparent url("../assets/icons/x-mark.png") no-repeat
+            background: transparent url("https://vetvalor.com/vetvalor-disability-calculator/assets/icons/x-mark.png") no-repeat
               center center !important;
             background-size: 100% 100% !important;
             border: none !important;
@@ -555,6 +563,32 @@ $xxl: 1400px;
         p {
           margin-bottom: 10px !important;
         }
+
+        .fancy-select-wrap {
+          .select2 {
+            &.select2-container {
+              width: 85px !important;
+              .selection {
+                width: 85px !important;
+
+                .select2-selection.select2-selection--single {
+                  padding: 10px 20px !important;
+                  font-weight: 600 !important;
+                  border-color: white !important;
+                  background-color: transparent !important;
+                  &:hover {
+                    border-color: white !important;
+                    background-color: transparent !important;
+                  }
+                }
+
+                .select2-selection__arrow {
+                  right: 10px !important;
+                }
+              }
+            }
+          }
+        }
       }
 
       select {
@@ -604,7 +638,7 @@ $xxl: 1400px;
         }
 
         span {
-          color: #fff!important;
+          color: #fff !important;
         }
       }
     }

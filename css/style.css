@@ -352,7 +352,7 @@
 .cal-container .cal-sections .selection .select-list .select-item .remove-btn {
   margin: 0 !important;
   padding: 0 !important;
-  background: transparent url("../assets/icons/x-mark.png") no-repeat center center !important;
+  background: transparent url("https://vetvalor.com/vetvalor-disability-calculator/assets/icons/x-mark.png") no-repeat center center !important;
   background-size: 100% 100% !important;
   border: none !important;
   cursor: pointer !important;
@@ -482,6 +482,25 @@
 }
 .cal-container .cal-sections .form .input-group p {
   margin-bottom: 10px !important;
+}
+.cal-container .cal-sections .form .input-group .fancy-select-wrap .select2.select2-container {
+  width: 85px !important;
+}
+.cal-container .cal-sections .form .input-group .fancy-select-wrap .select2.select2-container .selection {
+  width: 85px !important;
+}
+.cal-container .cal-sections .form .input-group .fancy-select-wrap .select2.select2-container .selection .select2-selection.select2-selection--single {
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  border-color: white !important;
+  background-color: transparent !important;
+}
+.cal-container .cal-sections .form .input-group .fancy-select-wrap .select2.select2-container .selection .select2-selection.select2-selection--single:hover {
+  border-color: white !important;
+  background-color: transparent !important;
+}
+.cal-container .cal-sections .form .input-group .fancy-select-wrap .select2.select2-container .selection .select2-selection__arrow {
+  right: 10px !important;
 }
 .cal-container .cal-sections .form input[type=radio] {
   appearance: none !important;
