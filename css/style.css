@@ -165,6 +165,36 @@
     width: 302px !important;
   }
 }
+.cal-container .cal-sections .disability .fancy-select-wrap .select2.select2-container {
+  width: 300px !important;
+  height: 63px !important;
+}
+.cal-container .cal-sections .disability .fancy-select-wrap .select2.select2-container .selection {
+  width: 300px !important;
+  height: 63px !important;
+}
+.cal-container .cal-sections .disability .fancy-select-wrap .select2.select2-container .selection .select2-selection.select2-selection--single {
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  border-color: white !important;
+  background-color: transparent !important;
+  height: 63px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+.cal-container .cal-sections .disability .fancy-select-wrap .select2.select2-container .selection .select2-selection.select2-selection--single:hover {
+  border-color: white !important;
+  background-color: transparent !important;
+}
+.cal-container .cal-sections .disability .fancy-select-wrap .select2.select2-container .selection .select2-selection.select2-selection--single .select2-selection__rendered {
+  font-size: 1.1rem !important;
+  line-height: normal !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+}
+.cal-container .cal-sections .disability .fancy-select-wrap .select2.select2-container .selection .select2-selection__arrow {
+  right: 10px !important;
+}
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .disability {
     width: 670px !important;
@@ -279,6 +309,9 @@
   padding: 15px !important;
   padding-bottom: 25px !important;
   width: 100% !important;
+}
+.cal-container .cal-sections .disability .percent-dis-select .fancy-select-wrap:first-child {
+  margin-bottom: 5px !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .disability .percent-dis-select {
@@ -560,6 +593,25 @@
 }
 .cal-container .cal-sections .parents {
   display: block !important;
+}
+.cal-container .cal-sections .parents .parent-count .fancy-select-wrap .select2.select2-container {
+  width: 85px !important;
+}
+.cal-container .cal-sections .parents .parent-count .fancy-select-wrap .select2.select2-container .selection {
+  width: 85px !important;
+}
+.cal-container .cal-sections .parents .parent-count .fancy-select-wrap .select2.select2-container .selection .select2-selection.select2-selection--single {
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  border-color: white !important;
+  background-color: transparent !important;
+}
+.cal-container .cal-sections .parents .parent-count .fancy-select-wrap .select2.select2-container .selection .select2-selection.select2-selection--single:hover {
+  border-color: white !important;
+  background-color: transparent !important;
+}
+.cal-container .cal-sections .parents .parent-count .fancy-select-wrap .select2.select2-container .selection .select2-selection__arrow {
+  right: 10px !important;
 }
 
 /*# sourceMappingURL=style.css.map */
