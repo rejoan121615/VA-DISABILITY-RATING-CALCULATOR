@@ -190,6 +190,45 @@ $xxl: 1400px;
     }
 
     .disability {
+      // for mobile select box customization
+      .fancy-select-wrap {
+        .select2 {
+          &.select2-container {
+            width: 300px !important;
+            height: 63px !important;
+            .selection {
+              width: 300px !important;
+              height: 63px !important;
+
+              .select2-selection.select2-selection--single {
+                padding: 10px 20px !important;
+                font-weight: 600 !important;
+                border-color: white !important;
+                background-color: transparent !important;
+                height: 63px !important;
+                display: flex !important;
+                align-items: center !important;
+                &:hover {
+                  border-color: white !important;
+                  background-color: transparent !important;
+                }
+
+                .select2-selection__rendered {
+                  font-size: 1.1rem !important;
+                  line-height: normal !important;
+                  font-weight: 600 !important;
+                  color: #fff !important;
+                }
+              }
+
+              .select2-selection__arrow {
+                right: 10px !important;
+              }
+            }
+          }
+        }
+      }
+
       @include resp($lg) {
         // width: 556px;
         width: 670px !important;
@@ -288,14 +327,6 @@ $xxl: 1400px;
             ) !important;
           }
         }
-        // border-left: 5px solid;
-        // border-image: linear-gradient(
-        //   0deg,
-        //   rgba(0, 39, 117, 1) 0%,
-        //   rgba(0, 83, 252, 1) 50%,
-        //   rgba(0, 39, 117, 1) 100%
-        // );
-        // border-image-slice: 1;
         .percent-btns {
           display: grid !important;
           grid-template-columns: repeat(2, 117.5px) !important;
@@ -334,6 +365,12 @@ $xxl: 1400px;
         padding: 15px !important;
         padding-bottom: 25px !important;
         width: 100% !important;
+
+        .fancy-select-wrap {
+          &:first-child {
+            margin-bottom: 5px !important;
+          }
+        }
 
         @include resp($lg) {
           display: none !important;
@@ -412,8 +449,9 @@ $xxl: 1400px;
           .remove-btn {
             margin: 0 !important;
             padding: 0 !important;
-            background: transparent url("https://vetvalor.com/vetvalor-disability-calculator/assets/icons/x-mark.png") no-repeat
-              center center !important;
+            background: transparent
+              url("https://vetvalor.com/vetvalor-disability-calculator/assets/icons/x-mark.png")
+              no-repeat center center !important;
             background-size: 100% 100% !important;
             border: none !important;
             cursor: pointer !important;
@@ -660,6 +698,33 @@ $xxl: 1400px;
 
     .parents {
       display: block !important;
+      .parent-count {
+        .fancy-select-wrap {
+          .select2 {
+            &.select2-container {
+              width: 85px !important;
+              .selection {
+                width: 85px !important;
+
+                .select2-selection.select2-selection--single {
+                  padding: 10px 20px !important;
+                  font-weight: 600 !important;
+                  border-color: white !important;
+                  background-color: transparent !important;
+                  &:hover {
+                    border-color: white !important;
+                    background-color: transparent !important;
+                  }
+                }
+
+                .select2-selection__arrow {
+                  right: 10px !important;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
