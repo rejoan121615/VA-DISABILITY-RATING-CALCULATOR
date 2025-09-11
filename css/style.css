@@ -1,8 +1,8 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter";
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  font-family: "Inter" !important;
 }
 
 :root {
@@ -17,131 +17,136 @@
 }
 
 .cal-container .cal-sections .form select, .cal-container .cal-sections .disability .percent-dis-select .cal-custom-select {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  display: block;
-  width: 85px;
-  background-color: transparent;
-  border-radius: 5px;
-  border: 1px solid var(--vet-color-border);
-  color: white;
-  padding: 10px 20px;
-  background-color: #1d2e4d;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  background-size: 16px 16px;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  display: block !important;
+  width: 85px !important;
+  background-color: transparent !important;
+  border-radius: 5px !important;
+  border: 1px solid var(--vet-color-border) !important;
+  color: white !important;
+  padding: 10px 20px !important;
+  background-color: #1d2e4d !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 15px center !important;
+  background-size: 16px 16px !important;
 }
 
 .cal-container {
-  background-color: #0d1e37;
-  color: #ffffff;
+  background-color: #0d1e37 !important;
+  color: #ffffff !important;
 }
 .cal-container button {
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
+  margin: 0 !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+}
+.cal-container * {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: normal !important;
 }
 .cal-container .cal-wrap {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 330px;
-  padding-top: 70px;
-  padding-bottom: 40px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+  max-width: 330px !important;
+  padding-top: 70px !important;
+  padding-bottom: 40px !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-wrap {
-    padding: 50px 0px;
-    max-width: 670px;
+    padding: 50px 0px !important;
+    max-width: 670px !important;
   }
 }
 @media only screen and (min-width: 1400px) {
   .cal-container .cal-wrap {
-    padding: 100px 0px;
-    max-width: 1240px;
+    padding: 100px 0px !important;
+    max-width: 1240px !important;
   }
 }
 .cal-container .cal-title {
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 60px;
-  display: flex;
-  flex-flow: column wrap;
+  font-weight: 500 !important;
+  text-align: center !important;
+  margin-bottom: 60px !important;
+  display: flex !important;
+  flex-flow: column wrap !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-title {
-    display: block;
+    display: block !important;
   }
 }
 .cal-container .cal-title span:first-child {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #1abbff;
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: #1abbff !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-title span:first-child {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #d8e5ff;
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+    color: #d8e5ff !important;
   }
 }
 .cal-container .cal-title span:last-child {
-  font-size: 1.4rem;
-  color: #d8e5ff;
+  font-size: 1.4rem !important;
+  color: #d8e5ff !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-title span:last-child {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #d8e5ff;
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+    color: #d8e5ff !important;
   }
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-title span:first-child, .cal-container .cal-title span:last-child {
-    font-size: 2rem;
-    font-weight: 500;
-    color: #d8e5ff;
+    font-size: 2rem !important;
+    font-weight: 500 !important;
+    color: #d8e5ff !important;
   }
 }
 .cal-container .cal-sections {
-  display: flex;
-  flex-flow: column wrap;
-  row-gap: var(--vet-sec-gap);
-  column-gap: var(--vet-sec-gap);
+  display: flex !important;
+  flex-flow: column wrap !important;
+  row-gap: var(--vet-sec-gap) !important;
+  column-gap: var(--vet-sec-gap) !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections {
-    flex-flow: row wrap;
-    justify-content: center;
-    row-gap: 30px;
+    flex-flow: row wrap !important;
+    justify-content: center !important;
+    row-gap: 30px !important;
   }
 }
 .cal-container .cal-sections .cal-section {
-  display: flex;
-  flex-flow: column wrap;
+  display: flex !important;
+  flex-flow: column wrap !important;
 }
 .cal-container .cal-sections .cal-section h2,
 .cal-container .cal-sections .cal-section h3 {
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-  background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0));
-  color: #d8e5ff;
-  padding: 15px 0px 15px 20px;
-  border-radius: 5px;
-  margin-bottom: var(--vet-sec-gap);
+  font-size: 16px !important;
+  line-height: 20px !important;
+  font-weight: 500 !important;
+  background-image: linear-gradient(90deg, #022877, rgba(2, 40, 119, 0)) !important;
+  color: #d8e5ff !important;
+  padding: 15px 0px 15px 20px !important;
+  border-radius: 5px !important;
+  margin-bottom: var(--vet-sec-gap) !important;
 }
 .cal-container .cal-sections .cal-section > div {
-  flex: 1;
+  flex: 1 !important;
 }
 @media only screen and (min-width: 1200px) {
   .cal-container .cal-sections .combined {
-    grid-column: 2/span 1;
+    grid-column: 2/span 1 !important;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -149,7 +154,7 @@
   .cal-container .cal-sections .dependent,
   .cal-container .cal-sections .maritial-status,
   .cal-container .cal-sections .parents {
-    width: 330px;
+    width: 330px !important;
   }
 }
 @media only screen and (min-width: 1400px) {
@@ -157,381 +162,385 @@
   .cal-container .cal-sections .dependent,
   .cal-container .cal-sections .maritial-status,
   .cal-container .cal-sections .parents {
-    width: 302px;
+    width: 302px !important;
   }
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .disability {
-    width: 670px;
-    height: 605px;
-    display: flex;
-    flex-flow: column wrap;
+    width: 670px !important;
+    height: 605px !important;
+    display: flex !important;
+    flex-flow: column wrap !important;
   }
   .cal-container .cal-sections .disability > div {
-    flex: 1;
+    flex: 1 !important;
   }
 }
 @media only screen and (min-width: 1400px) {
   .cal-container .cal-sections .disability {
-    width: 556px;
+    width: 556px !important;
   }
 }
 .cal-container .cal-sections .disability .disab-percent {
-  display: flex;
+  display: flex !important;
 }
 .cal-container .cal-sections .disability .disab-list {
-  flex: 1;
-  display: none;
+  flex: 1 !important;
+  display: none !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .disability .disab-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 5px;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    row-gap: 5px !important;
   }
 }
 .cal-container .cal-sections .disability .disab-item {
-  border: 1px solid var(--vet-color-border);
-  background-color: var(--vet-color-list-item);
-  color: #ffffff;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border: 1px solid var(--vet-color-border) !important;
+  background-color: var(--vet-color-list-item) !important;
+  color: #ffffff !important;
+  padding: 10px 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+  border-top-left-radius: 5px !important;
+  border-bottom-left-radius: 5px !important;
 }
 .cal-container .cal-sections .disability .disab-item span {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 18px !important;
+  font-weight: 400 !important;
 }
 .cal-container .cal-sections .disability .disab-item .arrow {
-  display: block;
-  width: 16px;
-  height: 16px;
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
 }
 .cal-container .cal-sections .disability .disab-item .tick {
-  display: none;
-  width: 20px;
-  height: 20px;
+  display: none !important;
+  width: 20px !important;
+  height: 20px !important;
 }
 .cal-container .cal-sections .disability .disab-item.active, .cal-container .cal-sections .disability .disab-item.selected {
-  background-image: linear-gradient(-90deg, #0048da, #002776);
+  background-image: linear-gradient(-90deg, #0048da, #002776) !important;
 }
 .cal-container .cal-sections .disability .disab-item.active .arrow, .cal-container .cal-sections .disability .disab-item.selected .arrow {
-  display: none;
+  display: none !important;
 }
 .cal-container .cal-sections .disability .disab-item.active .tick, .cal-container .cal-sections .disability .disab-item.selected .tick {
-  display: block;
+  display: block !important;
 }
 .cal-container .cal-sections .disability .percent-list {
-  display: none;
-  width: 325px;
-  border: 1px solid var(--vet-color-border);
+  display: none !important;
+  width: 325px !important;
+  border: 1px solid var(--vet-color-border) !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .disability .percent-list {
-    display: block;
-    margin-left: 10px;
-    position: relative;
+    display: block !important;
+    margin-left: 10px !important;
+    position: relative !important;
   }
   .cal-container .cal-sections .disability .percent-list::after {
-    content: "";
-    position: absolute;
-    top: -1px;
-    left: -5px;
-    width: 5px;
-    height: calc(100% + 2px);
-    background: linear-gradient(0deg, #263d67 0%, #0053fc 50%, #263d67 100%);
+    content: "" !important;
+    position: absolute !important;
+    top: -1px !important;
+    left: -5px !important;
+    width: 5px !important;
+    height: calc(100% + 2px) !important;
+    background: linear-gradient(0deg, #263d67 0%, #0053fc 50%, #263d67 100%) !important;
   }
 }
 .cal-container .cal-sections .disability .percent-list .percent-btns {
-  display: grid;
-  grid-template-columns: repeat(2, 117.5px);
-  grid-template-rows: repeat(5, 80px);
-  gap: var(--vet-sec-gap);
-  align-content: center;
-  justify-content: center;
-  height: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(2, 117.5px) !important;
+  grid-template-rows: repeat(5, 80px) !important;
+  gap: var(--vet-sec-gap) !important;
+  align-content: center !important;
+  justify-content: center !important;
+  height: 100% !important;
 }
 .cal-container .cal-sections .disability .percent-list .percent-btns .percent-btn {
-  background: linear-gradient(90deg, rgb(29, 46, 76) 0%, rgba(29, 46, 76, 0) 100%);
-  color: #c4d7ff;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  transition: background-color 0.2s ease;
+  background: linear-gradient(90deg, rgb(29, 46, 76) 0%, rgba(29, 46, 76, 0) 100%) !important;
+  color: #c4d7ff !important;
+  border-radius: 5px !important;
+  text-align: center !important;
+  font-size: 30px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  border: none !important;
+  transition: background-color 0.2s ease !important;
 }
 .cal-container .cal-sections .disability .percent-list .percent-btns .percent-btn:hover {
-  background: linear-gradient(90deg, rgb(0, 43, 128) 0%, rgb(0, 63, 189) 100%);
+  background: linear-gradient(90deg, rgb(0, 43, 128) 0%, rgb(0, 63, 189) 100%) !important;
 }
 .cal-container .cal-sections .disability .percent-dis-select {
-  padding: 15px;
-  padding-bottom: 25px;
-  width: 100%;
+  padding: 15px !important;
+  padding-bottom: 25px !important;
+  width: 100% !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .disability .percent-dis-select {
-    display: none;
+    display: none !important;
   }
 }
 .cal-container .cal-sections .disability .percent-dis-select .cal-custom-select {
-  width: 100%;
-  padding: 20px;
+  width: 100% !important;
+  padding: 20px !important;
 }
 .cal-container .cal-sections .disability .percent-dis-select .cal-custom-select:last-child {
-  margin-top: 5px;
+  margin-top: 5px !important;
 }
 .cal-container .cal-sections .selection {
-  width: 330px;
-  display: flex;
-  flex-flow: column wrap;
+  width: 330px !important;
+  display: flex !important;
+  flex-flow: column wrap !important;
 }
 @media only screen and (min-width: 1200px) {
   .cal-container .cal-sections .selection {
-    grid-column: 1/span 1;
+    grid-column: 1/span 1 !important;
   }
 }
 .cal-container .cal-sections .selection h2 {
-  padding-left: 20px;
+  padding-left: 20px !important;
 }
 .cal-container .cal-sections .selection .select-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid var(--vet-color-border);
-  gap: 10px;
-  height: auto;
-  overflow-y: auto;
-  flex: 1;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  margin-bottom: 20px;
-  max-height: 80svh;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  border: 1px solid var(--vet-color-border) !important;
+  gap: 10px !important;
+  height: auto !important;
+  overflow-y: auto !important;
+  flex: 1 !important;
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+  margin-bottom: 20px !important;
+  max-height: 80svh !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .selection .select-list {
-    padding-top: 44px;
-    padding-bottom: 44px;
-    margin-bottom: 0px;
-    max-height: 545px;
+    padding-top: 44px !important;
+    padding-bottom: 44px !important;
+    margin-bottom: 0px !important;
+    max-height: 545px !important;
   }
 }
 .cal-container .cal-sections .selection .select-list .select-item {
-  width: 100%;
-  max-width: 280px;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #1c2d4c;
-  background: linear-gradient(90deg, rgb(28, 45, 76) 0%, rgb(2, 21, 46) 100%);
-  border: 1px solid #00245b;
+  width: 100% !important;
+  max-width: 280px !important;
+  padding: 10px 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  background: #1c2d4c !important;
+  background: linear-gradient(90deg, rgb(28, 45, 76) 0%, rgb(2, 21, 46) 100%) !important;
+  border: 1px solid #00245b !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .selection .select-list .select-item {
-    width: 240px;
+    width: 240px !important;
   }
 }
 .cal-container .cal-sections .selection .select-list .select-item .select-result {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-  color: #c8dbff;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  color: #c8dbff !important;
 }
 .cal-container .cal-sections .selection .select-list .select-item .remove-btn {
-  margin: 0;
-  padding: 0;
-  background: transparent url("../assets/icons/x-mark.png") no-repeat center center;
-  background-size: 100% 100%;
-  border: none;
-  cursor: pointer;
-  width: 18px;
-  height: 18px;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent url("../assets/icons/x-mark.png") no-repeat center center !important;
+  background-size: 100% 100% !important;
+  border: none !important;
+  cursor: pointer !important;
+  width: 18px !important;
+  height: 18px !important;
 }
 .cal-container .cal-sections .selection .select-list .select-item.no-select-item {
-  justify-content: center;
+  justify-content: center !important;
 }
 .cal-container .cal-sections .selection .select-list .select-item.no-select-item .select-result {
-  color: #7a8ca8;
-  font-style: italic;
-  text-align: center;
+  color: #7a8ca8 !important;
+  font-style: italic !important;
+  text-align: center !important;
 }
 .cal-container .cal-sections .combined {
-  order: 1;
-  width: 330px;
-  height: 605px;
+  order: 1 !important;
+  width: 330px !important;
+  height: 605px !important;
 }
 @media only screen and (min-width: 992px) {
   .cal-container .cal-sections .combined {
-    order: 0;
+    order: 0 !important;
   }
 }
 .cal-container .cal-sections .combined .combined-wrap {
-  display: grid;
-  grid-template-rows: 80px 100px 1fr 168px 1fr;
-  flex-direction: column;
-  align-items: stretch;
-  text-align: center;
-  background-color: #02152e;
-  padding: 4px;
-  row-gap: var(--vet-list-gap);
-  border: 1px solid var(--vet-color-border);
+  display: grid !important;
+  grid-template-rows: 80px 100px 1fr 168px 1fr !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  text-align: center !important;
+  background-color: #02152e !important;
+  padding: 4px !important;
+  row-gap: var(--vet-list-gap) !important;
+  border: 1px solid var(--vet-color-border) !important;
 }
 .cal-container .cal-sections .combined .combined-wrap p {
-  text-align: left;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: normal;
+  text-align: left !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: normal !important;
 }
 .cal-container .cal-sections .combined .combined-wrap h1 {
-  font-size: 50px;
-  font-weight: bold;
-  color: var(--vet-color-secondary);
+  font-size: 50px !important;
+  font-weight: bold !important;
+  color: var(--vet-color-secondary) !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .result-card,
 .cal-container .cal-sections .combined .combined-wrap .notice {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #051a3b;
+  padding: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: #051a3b !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .estimated,
 .cal-container .cal-sections .combined .combined-wrap .bilaterals {
-  padding: 0px 30px 0px 20px;
+  padding: 0px 30px 0px 20px !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .result-card h2 {
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  font-size: 30px;
-  font-weight: 500;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 30px !important;
+  font-weight: 500 !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .notice {
-  font-size: 0.8rem;
-  color: #a8b0c2;
-  background-color: transparent;
-  justify-content: flex-start;
+  font-size: 0.8rem !important;
+  color: #a8b0c2 !important;
+  background-color: transparent !important;
+  justify-content: flex-start !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .notice .icon {
-  width: 25px;
-  height: 25px;
-  display: block;
-  margin-right: 10px;
+  width: 25px !important;
+  height: 25px !important;
+  display: block !important;
+  margin-right: 10px !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .notice .notice-text {
-  text-align: left;
+  text-align: left !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .notice span {
-  display: block;
-  font-size: 11px;
-  font-weight: 400;
+  display: block !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .monthly {
-  flex-flow: row wrap;
-  justify-content: center;
-  padding: 40px 30px;
+  flex-flow: row wrap !important;
+  justify-content: center !important;
+  padding: 40px 30px !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .monthly p {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 .cal-container .cal-sections .combined .combined-wrap .btn-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 .cal-container .cal-sections .combined .combined-wrap #schedule-btn {
-  background-color: var(--vet-color-action);
-  border: 1px solid #f80001;
-  color: white;
-  font-size: 15px;
-  line-height: 18px;
-  font-weight: 500;
-  display: inline-block;
-  padding: 15px 19px;
-  border-radius: 50px;
+  background-color: var(--vet-color-action) !important;
+  border: 1px solid #f80001 !important;
+  color: white !important;
+  font-size: 15px !important;
+  line-height: 18px !important;
+  font-weight: 500 !important;
+  display: inline-block !important;
+  padding: 15px 19px !important;
+  border-radius: 50px !important;
 }
 .cal-container .cal-sections .form {
-  padding: 15px 20px;
-  padding-bottom: 30px;
+  padding: 15px 20px !important;
+  padding-bottom: 30px !important;
 }
 .cal-container .cal-sections .form p {
-  font-size: 1rem;
-  font-weight: 300;
-  margin-bottom: 15px;
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+  margin-bottom: 15px !important;
 }
 .cal-container .cal-sections .form label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  margin-right: 15px;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+  margin-right: 15px !important;
 }
 .cal-container .cal-sections .form .input-group {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
 }
 .cal-container .cal-sections .form .input-group p {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 .cal-container .cal-sections .form input[type=radio] {
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: transparent;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.2s;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  background-color: transparent !important;
+  border: 2px solid #fff !important;
+  border-radius: 50% !important;
+  width: 22px !important;
+  height: 22px !important;
+  cursor: pointer !important;
+  outline: none !important;
+  transition: border-color 0.2s !important;
+  position: relative !important;
+  opacity: 1 !important;
 }
 .cal-container .cal-sections .form input[type=radio]:checked {
-  border: 2px solid #fff;
-  background-color: transparent;
-  position: relative;
+  border: 2px solid #fff !important;
+  background-color: transparent !important;
 }
 .cal-container .cal-sections .form input[type=radio]:checked::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: var(--vet-color-secondary);
-  transform: translate(-50%, -50%);
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  top: 48% !important;
+  left: 50% !important;
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 50% !important;
+  background: var(--vet-color-secondary) !important;
+  transform: translate(-50%, -50%) !important;
 }
 .cal-container .cal-sections .form .radio-label {
-  display: inline-flex;
-  align-items: center;
-  margin-right: 20px;
-  cursor: pointer;
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 20px !important;
+  cursor: pointer !important;
 }
 .cal-container .cal-sections .form .radio-label .custom-radio {
-  margin-right: 8px;
+  margin-right: 8px !important;
+}
+.cal-container .cal-sections .form .radio-label span {
+  color: #fff !important;
 }
 .cal-container .cal-sections .maritial-status {
-  display: block;
+  display: block !important;
 }
 @media only screen and (min-width: 1400px) {
   .cal-container .cal-sections .maritial-status .spouse {
-    padding-right: 0px;
+    padding-right: 0px !important;
   }
 }
 .cal-container .cal-sections .maritial-status .spouse .large {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 .cal-container .cal-sections .maritial-status .spouse .small {
-  font-size: 0.8rem;
+  font-size: 0.8rem !important;
 }
 .cal-container .cal-sections .parents {
-  display: block;
+  display: block !important;
 }
 
 /*# sourceMappingURL=style.css.map */
